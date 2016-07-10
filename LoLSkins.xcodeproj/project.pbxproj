@@ -12,6 +12,7 @@
 		6B61E9961D2D858900BD35A5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B61E9951D2D858900BD35A5 /* Cartfile */; };
 		6B61E9981D2D920D00BD35A5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9971D2D920D00BD35A5 /* Alamofire.framework */; };
 		6B61E99A1D2D921300BD35A5 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9991D2D921300BD35A5 /* Unbox.framework */; };
+		6BC76A3B1D32513300E8BFF4 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BC76A3A1D32513300E8BFF4 /* APIKey.plist */; };
 		6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF841D299A7600076F50 /* AppDelegate.swift */; };
 		6BE3AF8C1D299A7600076F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8B1D299A7600076F50 /* Assets.xcassets */; };
 		6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		6B61E9951D2D858900BD35A5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6B61E9971D2D920D00BD35A5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6B61E9991D2D921300BD35A5 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		6BC76A3A1D32513300E8BFF4 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		6BE3AF811D299A7500076F50 /* LoLSkins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLSkins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AF841D299A7600076F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE3AF8B1D299A7600076F50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				6B61E98B1D2D811500BD35A5 /* Connection */,
 				6BE3AF841D299A7600076F50 /* AppDelegate.swift */,
 				6BE3AF901D299A7600076F50 /* Info.plist */,
+				6BC76A3A1D32513300E8BFF4 /* APIKey.plist */,
 			);
 			path = LoLSkins;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC76A3B1D32513300E8BFF4 /* APIKey.plist in Resources */,
 				6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */,
 				6BE3AF8C1D299A7600076F50 /* Assets.xcassets in Resources */,
 				6B61E9961D2D858900BD35A5 /* Cartfile in Resources */,
