@@ -9,5 +9,5 @@
 import Foundation
 
 struct LoLChampion {
-    
+    let name: String
 }

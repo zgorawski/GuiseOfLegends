@@ -9,6 +9,6 @@
 import Foundation
 
 enum JSONResponse {
-    case Success(AnyObject)
+    case Success(NSData)
     case Error(String)
 }

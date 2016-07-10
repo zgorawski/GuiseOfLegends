@@ -22,6 +22,7 @@
 		6BC76A4C1D32658200E8BFF4 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A4B1D32658200E8BFF4 /* RequestProtocol.swift */; };
 		6BC76A4E1D32676A00E8BFF4 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A4D1D32676A00E8BFF4 /* JSONResponse.swift */; };
 		6BC76A501D3269C000E8BFF4 /* ConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A4F1D3269C000E8BFF4 /* ConnectionProtocol.swift */; };
+		6BC76A521D3283EF00E8BFF4 /* ChampionsInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A511D3283EF00E8BFF4 /* ChampionsInterpreter.swift */; };
 		6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF841D299A7600076F50 /* AppDelegate.swift */; };
 		6BE3AF8C1D299A7600076F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8B1D299A7600076F50 /* Assets.xcassets */; };
 		6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		6BC76A4B1D32658200E8BFF4 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		6BC76A4D1D32676A00E8BFF4 /* JSONResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		6BC76A4F1D3269C000E8BFF4 /* ConnectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionProtocol.swift; sourceTree = "<group>"; };
+		6BC76A511D3283EF00E8BFF4 /* ChampionsInterpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsInterpreter.swift; sourceTree = "<group>"; };
 		6BE3AF811D299A7500076F50 /* LoLSkins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLSkins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AF841D299A7600076F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE3AF8B1D299A7600076F50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		6BC76A3D1D3253E100E8BFF4 /* Interpreters */ = {
 			isa = PBXGroup;
 			children = (
+				6BC76A511D3283EF00E8BFF4 /* ChampionsInterpreter.swift */,
 			);
 			path = Interpreters;
 			sourceTree = "<group>";
@@ -216,10 +219,10 @@
 				6BC76A441D325B8700E8BFF4 /* Storage */,
 				6B61E98D1D2D812800BD35A5 /* Storyboards */,
 				6BC76A3C1D3253D200E8BFF4 /* Views */,
-				6BC76A3D1D3253E100E8BFF4 /* Interpreters */,
 				6B61E98E1D2D812D00BD35A5 /* ViewControllers */,
 				6B61E98A1D2D810200BD35A5 /* Controllers */,
 				6B61E98C1D2D812100BD35A5 /* Models */,
+				6BC76A3D1D3253E100E8BFF4 /* Interpreters */,
 				6B61E98B1D2D811500BD35A5 /* Connection */,
 				6BE3AF841D299A7600076F50 /* AppDelegate.swift */,
 				6BE3AF901D299A7600076F50 /* Info.plist */,
@@ -405,6 +408,7 @@
 				6BC76A3F1D3254C200E8BFF4 /* ChampionsVC.swift in Sources */,
 				6BC76A4A1D32654800E8BFF4 /* AlamofireConnection.swift in Sources */,
 				6BC76A461D325B9800E8BFF4 /* PListStorage.swift in Sources */,
+				6BC76A521D3283EF00E8BFF4 /* ChampionsInterpreter.swift in Sources */,
 				6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */,
 				6BC76A4E1D32676A00E8BFF4 /* JSONResponse.swift in Sources */,
 				6BC76A481D325E3000E8BFF4 /* ChampionsRequest.swift in Sources */,

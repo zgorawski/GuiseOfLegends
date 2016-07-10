@@ -23,14 +23,14 @@ extension ChampionsRequest: Request {
         if case .Some = apiKey {
             return "https://global.api.pvp.net/api/lol/static-data/eune/v1.2/champion"
         } else { // slower alternative, not reccomended
-            return "TODO"
+            return "http://zgriotapi.azurewebsites.net/api/champions"
         }
     }
     
     var parameters: [String: AnyObject]? {
         
         if let apiKey = apiKey {
-            return ["champData": "image", "api_key": apiKey]
+            return ["champData": "skins", "api_key": apiKey]
         } else { // slower alternative, not reccomended
             return nil
         }

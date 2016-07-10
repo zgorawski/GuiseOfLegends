@@ -13,6 +13,10 @@ class ChampionsVC: UICollectionViewController {
     
     private let championsCellRI = String(ChampionsCell)
     private var model: [LoLChampion] = []
+    
+    // MARK: dependencies
+    
+    lazy var championsController = ChampionsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,10 @@ class ChampionsVC: UICollectionViewController {
         self.collectionView!.registerClass(ChampionsCell.self, forCellWithReuseIdentifier: championsCellRI)
 
         // Do any additional setup after loading the view.
+        
+        championsController.fetchChampions { champions in
+            let aa = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {

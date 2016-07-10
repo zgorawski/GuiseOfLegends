@@ -15,7 +15,7 @@ class AlamofireConnection: ConnectionProtocol {
         
         Alamofire.request(request.httpMethod, request.endpoint, parameters: request.parameters, encoding: request.parametersEncoding, headers: nil)
             .validate()
-            .responseJSON { response in
+            .responseData { response in
             
                 if let json = response.result.value where response.result.isSuccess {
                     callback?(JSONResponse.Success(json))
