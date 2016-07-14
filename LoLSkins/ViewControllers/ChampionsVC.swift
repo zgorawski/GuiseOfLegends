@@ -27,8 +27,11 @@ class ChampionsVC: UICollectionViewController {
 
         
         collectionView?.delegate = self
-        collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-        //setContentInsets()
+        
+        // collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: 35.0, bottom: 0.0, right: 35.0)
+        
+
+        setContentInsets()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,37 +51,19 @@ class ChampionsVC: UICollectionViewController {
     
     func setContentInsets() {
         
-        let itemWidth: CGFloat = 120.0 * (UIScreen.mainScreen().scale)
-        let minSpacingForCells: CGFloat = 10.0 * (UIScreen.mainScreen().scale)
-        let containerWidth = CGFloat(collectionView!.contentSize.width)
+        let itemWidth: CGFloat = 120.0
+        let minSpacingForCells: CGFloat = 10.0
+        let containerWidth = CGFloat(collectionView!.bounds.width)
         
-        // only 1 item fit case
-        if 2.0 * (itemWidth + minSpacingForCells) > containerWidth {
-            
-            let margin = containerWidth - itemWidth / 2.0
-            collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: margin, bottom: 0.0, right: margin)
-        }
-        // 2 items fit case
-        else if 3.0 * itemWidth + 4.0 * minSpacingForCells > containerWidth {
-            let margin = (containerWidth - 2.0 * itemWidth) / 3.0
-            print("margin: \(margin)")
-            collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: margin, bottom: 0.0, right: margin)
-        } else {
-            
-            // TODO:
-            let margin: CGFloat = 5.0
-            collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: margin, bottom: 0.0, right: margin)
-        }
+        let elementsCount = floor((containerWidth + minSpacingForCells) / (itemWidth + minSpacingForCells))
+        let freeSpace = containerWidth - elementsCount * itemWidth
+        let newSpacing = max(minSpacingForCells, freeSpace / (elementsCount + 1.0))
+        let spaceForMargins = freeSpace - newSpacing * (elementsCount - 1.0)
+        let margin = spaceForMargins / 2.0
         
+        print("calculated margin: \(margin)")
         
-
-//        let elements = floor(containerWidth / (itemWidth + 2.0 * minSpacingForCells))
-//        let emptySpace = containerWidth - itemWidth * elements
-//        let marginSpace = emptySpace / (elements + 1.0)
-//        
-//        print("margin: \(marginSpace)")
-//        
-//        collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: marginSpace, bottom: 0.0, right: marginSpace)
+        collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: margin, bottom: 0.0, right: margin)
         
     }
 
