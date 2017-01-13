@@ -1,2 +1,4 @@
-github "Alamofire/Alamofire" ~> 3.4
-github "johnsundell/unbox"
+github "Alamofire/Alamofire" ~> 4.0
+github "Alamofire/AlamofireImage" ~> 3.1
+github "SwiftyJSON/SwiftyJSON"
+github "ReactiveCocoa/ReactiveSwift" "1.0.0-rc.3"

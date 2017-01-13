@@ -11,9 +11,7 @@
 		6B61E9931D2D83D000BD35A5 /* LoLChampion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61E9921D2D83D000BD35A5 /* LoLChampion.swift */; };
 		6B61E9961D2D858900BD35A5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B61E9951D2D858900BD35A5 /* Cartfile */; };
 		6B61E9981D2D920D00BD35A5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9971D2D920D00BD35A5 /* Alamofire.framework */; };
-		6B61E99A1D2D921300BD35A5 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9991D2D921300BD35A5 /* Unbox.framework */; };
 		6B81658E1D377ED300BE4699 /* UIColor+ColorFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81658D1D377ED300BE4699 /* UIColor+ColorFromString.swift */; };
-		6BC76A3B1D32513300E8BFF4 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BC76A3A1D32513300E8BFF4 /* APIKey.plist */; };
 		6BC76A3F1D3254C200E8BFF4 /* ChampionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A3E1D3254C200E8BFF4 /* ChampionsVC.swift */; };
 		6BC76A411D32550B00E8BFF4 /* ChampionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A401D32550B00E8BFF4 /* ChampionsCell.swift */; };
 		6BC76A431D32573F00E8BFF4 /* ChampionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A421D32573F00E8BFF4 /* ChampionsController.swift */; };
@@ -25,10 +23,16 @@
 		6BC76A501D3269C000E8BFF4 /* ConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A4F1D3269C000E8BFF4 /* ConnectionProtocol.swift */; };
 		6BC76A521D3283EF00E8BFF4 /* ChampionsInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A511D3283EF00E8BFF4 /* ChampionsInterpreter.swift */; };
 		6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF841D299A7600076F50 /* AppDelegate.swift */; };
-		6BE3AF8C1D299A7600076F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8B1D299A7600076F50 /* Assets.xcassets */; };
 		6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */; };
 		6BE3AF9A1D299A7700076F50 /* LoLSkinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF991D299A7700076F50 /* LoLSkinsTests.swift */; };
 		6BE3AFA51D299A7700076F50 /* LoLSkinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */; };
+		998225011E27EC680011CB28 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225001E27EC680011CB28 /* AlamofireImage.framework */; };
+		998225031E27EC770011CB28 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225021E27EC770011CB28 /* ReactiveSwift.framework */; };
+		998225051E27EC880011CB28 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225041E27EC880011CB28 /* SwiftyJSON.framework */; };
+		998225071E27ECFC0011CB28 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225061E27ECFC0011CB28 /* Result.framework */; };
+		998225091E27ED310011CB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998225081E27ED310011CB28 /* Assets.xcassets */; };
+		9982250B1E28143E0011CB28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9982250A1E28143E0011CB28 /* .gitignore */; };
+		9982250D1E2814670011CB28 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982250C1E2814670011CB28 /* APIKey.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +57,7 @@
 		6B61E9921D2D83D000BD35A5 /* LoLChampion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoLChampion.swift; sourceTree = "<group>"; };
 		6B61E9951D2D858900BD35A5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6B61E9971D2D920D00BD35A5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		6B61E9991D2D921300BD35A5 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		6B81658D1D377ED300BE4699 /* UIColor+ColorFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorFromString.swift"; sourceTree = "<group>"; };
-		6BC76A3A1D32513300E8BFF4 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		6BC76A3E1D3254C200E8BFF4 /* ChampionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsVC.swift; sourceTree = "<group>"; };
 		6BC76A401D32550B00E8BFF4 /* ChampionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsCell.swift; sourceTree = "<group>"; };
 		6BC76A421D32573F00E8BFF4 /* ChampionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsController.swift; sourceTree = "<group>"; };
@@ -68,7 +70,6 @@
 		6BC76A511D3283EF00E8BFF4 /* ChampionsInterpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsInterpreter.swift; sourceTree = "<group>"; };
 		6BE3AF811D299A7500076F50 /* LoLSkins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLSkins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AF841D299A7600076F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6BE3AF8B1D299A7600076F50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		6BE3AF8E1D299A7600076F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BE3AF901D299A7600076F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE3AF951D299A7700076F50 /* LoLSkinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLSkinsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +78,13 @@
 		6BE3AFA01D299A7700076F50 /* LoLSkinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLSkinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLSkinsUITests.swift; sourceTree = "<group>"; };
 		6BE3AFA61D299A7700076F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		998225001E27EC680011CB28 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		998225021E27EC770011CB28 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		998225041E27EC880011CB28 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		998225061E27ECFC0011CB28 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		998225081E27ED310011CB28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9982250A1E28143E0011CB28 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9982250C1E2814670011CB28 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +92,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B61E99A1D2D921300BD35A5 /* Unbox.framework in Frameworks */,
 				6B61E9981D2D920D00BD35A5 /* Alamofire.framework in Frameworks */,
+				998225051E27EC880011CB28 /* SwiftyJSON.framework in Frameworks */,
+				998225071E27ECFC0011CB28 /* Result.framework in Frameworks */,
+				998225011E27EC680011CB28 /* AlamofireImage.framework in Frameworks */,
+				998225031E27EC770011CB28 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +164,6 @@
 		6B61E9911D2D81CA00BD35A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6BE3AF8B1D299A7600076F50 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -202,13 +212,14 @@
 		6BE3AF781D299A7500076F50 = {
 			isa = PBXGroup;
 			children = (
-				6B61E9991D2D921300BD35A5 /* Unbox.framework */,
+				9982250A1E28143E0011CB28 /* .gitignore */,
 				6B61E9971D2D920D00BD35A5 /* Alamofire.framework */,
 				6B61E9951D2D858900BD35A5 /* Cartfile */,
 				6BE3AF831D299A7600076F50 /* LoLSkins */,
 				6BE3AF981D299A7700076F50 /* LoLSkinsTests */,
 				6BE3AFA31D299A7700076F50 /* LoLSkinsUITests */,
 				6BE3AF821D299A7500076F50 /* Products */,
+				998224FF1E27EC680011CB28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +236,8 @@
 		6BE3AF831D299A7600076F50 /* LoLSkins */ = {
 			isa = PBXGroup;
 			children = (
+				9982250C1E2814670011CB28 /* APIKey.plist */,
+				998225081E27ED310011CB28 /* Assets.xcassets */,
 				6B61E9911D2D81CA00BD35A5 /* Resources */,
 				6BC76A441D325B8700E8BFF4 /* Storage */,
 				6B61E98D1D2D812800BD35A5 /* Storyboards */,
@@ -237,7 +250,6 @@
 				6B61E98B1D2D811500BD35A5 /* Connection */,
 				6BE3AF841D299A7600076F50 /* AppDelegate.swift */,
 				6BE3AF901D299A7600076F50 /* Info.plist */,
-				6BC76A3A1D32513300E8BFF4 /* APIKey.plist */,
 			);
 			path = LoLSkins;
 			sourceTree = "<group>";
@@ -258,6 +270,17 @@
 				6BE3AFA61D299A7700076F50 /* Info.plist */,
 			);
 			path = LoLSkinsUITests;
+			sourceTree = "<group>";
+		};
+		998224FF1E27EC680011CB28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				998225061E27ECFC0011CB28 /* Result.framework */,
+				998225041E27EC880011CB28 /* SwiftyJSON.framework */,
+				998225021E27EC770011CB28 /* ReactiveSwift.framework */,
+				998225001E27EC680011CB28 /* AlamofireImage.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,18 +347,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Zbigniew Górawski";
 				TargetAttributes = {
 					6BE3AF801D299A7500076F50 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9N8WSR7KDY;
+						LastSwiftMigration = 0820;
 					};
 					6BE3AF941D299A7700076F50 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9N8WSR7KDY;
+						LastSwiftMigration = 0820;
 						TestTargetID = 6BE3AF801D299A7500076F50;
 					};
 					6BE3AF9F1D299A7700076F50 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9N8WSR7KDY;
+						LastSwiftMigration = 0820;
 						TestTargetID = 6BE3AF801D299A7500076F50;
 					};
 				};
@@ -365,10 +394,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BC76A3B1D32513300E8BFF4 /* APIKey.plist in Resources */,
+				9982250B1E28143E0011CB28 /* .gitignore in Resources */,
 				6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */,
-				6BE3AF8C1D299A7600076F50 /* Assets.xcassets in Resources */,
 				6B61E9961D2D858900BD35A5 /* Cartfile in Resources */,
+				9982250D1E2814670011CB28 /* APIKey.plist in Resources */,
+				998225091E27ED310011CB28 /* Assets.xcassets in Resources */,
 				6B61E9901D2D816900BD35A5 /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +427,10 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -486,8 +519,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -532,8 +567,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -552,6 +589,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -561,14 +599,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = LoLSkins/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -576,14 +618,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = LoLSkins/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -591,10 +637,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				INFOPLIST_FILE = LoLSkinsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkinsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoLSkins.app/LoLSkins";
 			};
 			name = Debug;
@@ -603,10 +652,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				INFOPLIST_FILE = LoLSkinsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkinsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoLSkins.app/LoLSkins";
 			};
 			name = Release;
@@ -614,10 +666,13 @@
 		6BE3AFB01D299A7700076F50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				INFOPLIST_FILE = LoLSkinsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkinsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LoLSkins;
 			};
 			name = Debug;
@@ -625,10 +680,13 @@
 		6BE3AFB11D299A7700076F50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9N8WSR7KDY;
 				INFOPLIST_FILE = LoLSkinsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkinsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LoLSkins;
 			};
 			name = Release;

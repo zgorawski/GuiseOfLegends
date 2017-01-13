@@ -14,8 +14,8 @@ class ChampionsVC: UICollectionViewController {
     // !! https://github.com/kean/Preheat
     // !! https://github.com/kean/Nuke
     
-    private let championsCellRI = String(ChampionsCell)
-    private var model: [LoLChampion] = [] {
+    fileprivate let championsCellRI = String(describing: ChampionsCell.self)
+    fileprivate var model: [LoLChampion] = [] {
         didSet {
             collectionView?.reloadData()
         }
@@ -23,7 +23,7 @@ class ChampionsVC: UICollectionViewController {
     
     // MARK: dependencies
     
-    lazy var championsController = ChampionsController()
+    lazy var championsController: ChampionsController = ChampionsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,19 +87,19 @@ class ChampionsVC: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return model.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(championsCellRI, forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: championsCellRI, for: indexPath)
     
         // Configure the cell
         if let championsCell = cell as? ChampionsCell {

@@ -10,5 +10,5 @@ import Foundation
 
 protocol ConnectionProtocol {
     
-    func performRequest(request: Request, callback: ((JSONResponse) -> ())?)
+    func performRequest(_ request: Request, callback: ((JSONResponse) -> ())?)
 }

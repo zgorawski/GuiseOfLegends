@@ -7,31 +7,16 @@
 //
 
 import Foundation
-import Unbox
 
 class ChampionsInterpreter {
     
     //
     // returns nil if unable to interpret data
-    func interpret(json: NSData) -> [LoLChampion]? {
+    func interpret(_ json: Data) -> [LoLChampion]? {
         
-        guard let intermidiateObject: IntermidiateObject = try? Unbox(json) else { return nil }
         
-        return Array(intermidiateObject.data.values)
+        return nil
     }
     
-    private struct IntermidiateObject: Unboxable {
-        let data: [String: LoLChampion]
-        
-        init(unboxer: Unboxer) {
-            self.data = unboxer.unbox("data")
-        }
-    }
 }
 
-extension LoLChampion: Unboxable {
-    
-    init(unboxer: Unboxer) {
-        self.name = unboxer.unbox("name")
-    }
-}

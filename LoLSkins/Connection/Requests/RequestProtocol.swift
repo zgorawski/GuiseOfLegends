@@ -11,7 +11,7 @@ import Alamofire
 protocol Request {
 
     var endpoint: String { get }
-    var httpMethod: Alamofire.Method { get }
+    var httpMethod: Alamofire.HTTPMethod { get }
     var parameters: [String: AnyObject]? { get }
     var parametersEncoding: Alamofire.ParameterEncoding { get }
 }
@@ -23,6 +23,6 @@ extension Request {
     }
     
     var parametersEncoding: Alamofire.ParameterEncoding {
-        return .URL
+        return Alamofire.URLEncoding.default
     }
 }

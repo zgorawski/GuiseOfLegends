@@ -16,11 +16,11 @@ struct ChampionsRequest {
 
 extension ChampionsRequest: Request {
     
-    var httpMethod: Alamofire.Method { return .GET }
+    var httpMethod: Alamofire.HTTPMethod { return .get }
     
     var endpoint: String {
         
-        if case .Some = apiKey {
+        if case .some = apiKey {
             return "https://global.api.pvp.net/api/lol/static-data/eune/v1.2/champion"
         } else { // slower alternative, not reccomended
             return "http://zgriotapi.azurewebsites.net/api/champions"
@@ -30,7 +30,7 @@ extension ChampionsRequest: Request {
     var parameters: [String: AnyObject]? {
         
         if let apiKey = apiKey {
-            return ["champData": "skins", "api_key": apiKey]
+            return ["champData": "skins" as AnyObject, "api_key": apiKey as AnyObject]
         } else { // slower alternative, not reccomended
             return nil
         }

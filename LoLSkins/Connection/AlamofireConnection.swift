@@ -11,16 +11,16 @@ import Alamofire
 
 class AlamofireConnection: ConnectionProtocol {
     
-    func performRequest(request: Request, callback: ((JSONResponse) -> ())?) {
+    func performRequest(_ request: Request, callback: ((JSONResponse) -> ())?) {
         
-        Alamofire.request(request.httpMethod, request.endpoint, parameters: request.parameters, encoding: request.parametersEncoding, headers: nil)
+        Alamofire.request(request.endpoint, method: request.httpMethod, parameters: request.parameters, encoding: request.parametersEncoding, headers: nil)
             .validate()
             .responseData { response in
             
-                if let json = response.result.value where response.result.isSuccess {
-                    callback?(JSONResponse.Success(json))
+                if let json = response.result.value, response.result.isSuccess {
+                    callback?(JSONResponse.success(json))
                 } else {
-                    callback?(JSONResponse.Error("Failure response received"))
+                    callback?(JSONResponse.error("Failure response received"))
                 }
         }
     }

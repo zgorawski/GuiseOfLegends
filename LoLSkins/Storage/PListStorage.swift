@@ -12,7 +12,7 @@ class PListStorage {
     
     func readValue<T>(forKey key: String, inPlist plist: String) -> T? {
         
-        guard let path = NSBundle.mainBundle().pathForResource(plist, ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] else {
+        guard let path = Bundle.main.path(forResource: plist, ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] else {
             return nil
         }
         
