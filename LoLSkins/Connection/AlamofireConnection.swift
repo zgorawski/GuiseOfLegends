@@ -8,20 +8,35 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AlamofireConnection: ConnectionProtocol {
     
     func performRequest(_ request: Request, callback: ((JSONResponse) -> ())?) {
         
-        Alamofire.request(request.endpoint, method: request.httpMethod, parameters: request.parameters, encoding: request.parametersEncoding, headers: nil)
+        
+        Alamofire.request(
+            request.endpoint,
+            method: request.httpMethod,
+            parameters: request.parameters,
+            encoding: request.parametersEncoding,
+            headers: nil)
             .validate()
-            .responseData { response in
-            
-                if let json = response.result.value, response.result.isSuccess {
-                    callback?(JSONResponse.success(json))
-                } else {
-                    callback?(JSONResponse.error("Failure response received"))
+            .responseJSON { response in
+                
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("JSON: \(json)")
+                case .failure(let error):
+                    print(error)
                 }
+            
+//                if let json = response.result.value, response.result.isSuccess {
+//                    callback?(JSONResponse.success(json))
+//                } else {
+//                    callback?(JSONResponse.error("Failure response received"))
+//                }
         }
     }
 }

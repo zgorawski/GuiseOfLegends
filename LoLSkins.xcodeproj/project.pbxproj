@@ -26,6 +26,7 @@
 		6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */; };
 		6BE3AF9A1D299A7700076F50 /* LoLSkinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF991D299A7700076F50 /* LoLSkinsTests.swift */; };
 		6BE3AFA51D299A7700076F50 /* LoLSkinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */; };
+		9929536F1E2909EF0022662B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9929536E1E2909EF0022662B /* ReactiveCocoa.framework */; };
 		998225011E27EC680011CB28 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225001E27EC680011CB28 /* AlamofireImage.framework */; };
 		998225031E27EC770011CB28 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225021E27EC770011CB28 /* ReactiveSwift.framework */; };
 		998225051E27EC880011CB28 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225041E27EC880011CB28 /* SwiftyJSON.framework */; };
@@ -78,6 +79,7 @@
 		6BE3AFA01D299A7700076F50 /* LoLSkinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLSkinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLSkinsUITests.swift; sourceTree = "<group>"; };
 		6BE3AFA61D299A7700076F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9929536E1E2909EF0022662B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		998225001E27EC680011CB28 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		998225021E27EC770011CB28 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		998225041E27EC880011CB28 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9929536F1E2909EF0022662B /* ReactiveCocoa.framework in Frameworks */,
 				6B61E9981D2D920D00BD35A5 /* Alamofire.framework in Frameworks */,
 				998225051E27EC880011CB28 /* SwiftyJSON.framework in Frameworks */,
 				998225071E27ECFC0011CB28 /* Result.framework in Frameworks */,
@@ -275,6 +278,7 @@
 		998224FF1E27EC680011CB28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9929536E1E2909EF0022662B /* ReactiveCocoa.framework */,
 				998225061E27ECFC0011CB28 /* Result.framework */,
 				998225041E27EC880011CB28 /* SwiftyJSON.framework */,
 				998225021E27EC770011CB28 /* ReactiveSwift.framework */,
@@ -431,6 +435,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 			);
 			outputPaths = (
 			);

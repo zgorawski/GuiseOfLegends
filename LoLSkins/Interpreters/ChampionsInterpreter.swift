@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class ChampionsInterpreter {
     
     //
     // returns nil if unable to interpret data
-    func interpret(_ json: Data) -> [LoLChampion]? {
+    func interpret(_ json: JSON) -> [LoLChampion]? {
         
         
         return nil

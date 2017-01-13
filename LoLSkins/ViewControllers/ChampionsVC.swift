@@ -7,14 +7,15 @@
 //
 
 import UIKit
-
+import ReactiveCocoa
+import ReactiveSwift
 
 class ChampionsVC: UICollectionViewController {
     
     // !! https://github.com/kean/Preheat
     // !! https://github.com/kean/Nuke
     
-    fileprivate let championsCellRI = String(describing: ChampionsCell.self)
+    fileprivate let championsCellRI = "ChampionsCell"
     fileprivate var model: [LoLChampion] = [] {
         didSet {
             collectionView?.reloadData()

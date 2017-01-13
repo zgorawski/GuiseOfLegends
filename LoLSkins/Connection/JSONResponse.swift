@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 enum JSONResponse {
-    case success(Data)
+    case success(JSON)
     case error(String)
 }
