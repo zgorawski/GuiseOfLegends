@@ -10,4 +10,5 @@ import Foundation
 
 struct LoLChampion {
     let name: String
+    let key: String
 }

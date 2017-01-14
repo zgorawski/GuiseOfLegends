@@ -15,8 +15,20 @@ class ChampionsInterpreter {
     // returns nil if unable to interpret data
     func interpret(_ json: JSON) -> [LoLChampion]? {
         
+        guard let data = json["data"].dictionary else { return nil }
         
-        return nil
+        let champions = data.map({ (key: String, value: JSON) -> LoLChampion? in
+            
+            guard
+                let name = value["name"].string,
+                let championKey = value["key"].string
+            else { return nil }
+            
+            return LoLChampion(name: name, key: championKey)
+            
+        }).flatMap({ $0 })
+        
+        return champions
     }
     
 }

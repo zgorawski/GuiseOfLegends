@@ -27,16 +27,11 @@ class AlamofireConnection: ConnectionProtocol {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print("JSON: \(json)")
+                    callback?(JSONResponse.success(json))
                 case .failure(let error):
-                    print(error)
+                    callback?(JSONResponse.error("Failure response received \(error.localizedDescription)"))
                 }
-            
-//                if let json = response.result.value, response.result.isSuccess {
-//                    callback?(JSONResponse.success(json))
-//                } else {
-//                    callback?(JSONResponse.error("Failure response received"))
-//                }
+
         }
     }
 }

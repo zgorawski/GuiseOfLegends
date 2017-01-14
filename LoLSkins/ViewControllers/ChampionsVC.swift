@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import ReactiveCocoa
-import ReactiveSwift
+import AlamofireImage
 
 class ChampionsVC: UICollectionViewController {
     
@@ -107,6 +106,9 @@ class ChampionsVC: UICollectionViewController {
             
             championsCell.backgroundColor = UIColor(randomString: model[indexPath.item].name)
             championsCell.championNameLabel.text = model[indexPath.item].name
+            
+            let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/7.1.1/img/champion/\(model[indexPath.item].key).png")!
+            championsCell.portraitImageView.af_setImage(withURL: url)
         }
     
         return cell
