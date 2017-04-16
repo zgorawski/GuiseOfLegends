@@ -11,9 +11,6 @@ import AlamofireImage
 
 class ChampionsVC: UICollectionViewController {
     
-    // !! https://github.com/kean/Preheat
-    // !! https://github.com/kean/Nuke
-    
     fileprivate let championsCellRI = "ChampionsCell"
     fileprivate var model: [LoLChampion] = [] {
         didSet {
@@ -23,7 +20,7 @@ class ChampionsVC: UICollectionViewController {
     
     // MARK: dependencies
     
-    lazy var championsController: ChampionsController = ChampionsController()
+    // lazy var championsController: ChampionsController = ChampionsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +41,13 @@ class ChampionsVC: UICollectionViewController {
         
 
         // Do any additional setup after loading the view.
-        
+        /*
         championsController.fetchChampions { champions in
             if let champions = champions {
                 self.model = champions
             }
         }
+ */
     }
     
     func setContentInsets() {
