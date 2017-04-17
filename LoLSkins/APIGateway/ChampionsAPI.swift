@@ -24,13 +24,19 @@ class ChampionsAPI {
     
     func fetchChampions() {
         
-        guard let apiKey: String? = plistStorage.readValue(forKey: "APIKey", inPlist: "APIKey") else { return }
+        guard let apiKey = apiKey else { return }
         
+        let request = GetChampionsRequest(apiKey: apiKey)
+        engine.performRequest(request: request, handler: { _ in })
     }
     
     func getChampions() {
         
     }
+    
+    // MARK: Private
+    
+    private var apiKey: String? { return plistStorage.readValue(forKey: "APIKey", inPlist: "APIKey") }
 }
 
 
@@ -38,46 +44,50 @@ struct GetChampionsRequest: SOLIDNetworking.Request {
     
     let apiKey: String
     
-    // /api/lol/static-data/eune/v1.2/champion"
-    // ["champData": "skins" as AnyObject, "api_key": apiKey as AnyObject]
+    init(apiKey: String) {
+        self.apiKey = apiKey
+    }
     
-    var httpMethod: HTTPMethod = .get
-    var host: String = "global.api.pvp.net"
-    var endpoint: String = "/api/lol/static-data/eune/v1.2/champion"
+    // /api/lol/static-data/eune/v1.2/champion"
+    // https://eun1.api.riotgames.com/lol/static-data/v3/champions?champData=skins&api_key=102aae41-5d53-49eb-ac7d-d21b4b9c9a2a
+    
+    var httpMethod: HTTPMethod { return .get }
+    var host: String { return "eun1.api.riotgames.com" }
+    var endpoint: String { return "/lol/static-data/v3/champions" }
     
     var parameters: Parameters? { return ["champData": "skins", "api_key": apiKey] }
-    var parameterEncoding: ParameterEncoding = JSONEncoding.default
-    var headers: HTTPHeaders? = nil
+    var parameterEncoding: ParameterEncoding { return URLEncoding.default }
+    var headers: HTTPHeaders? { return nil }
     
-    var interpreter = GetChampionsInterpreter()
+    var interpreter: GetChampionsInterpreter = GetChampionsInterpreter()
 }
 
 class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
     
     func interpret(data: Data?, response: HTTPURLResponse?, error: Error?) -> SOLIDNetworking.Result<[LoLChampion], ChampionsAPIError> {
-        return Result.success([])
+        
+        guard error == nil, response?.statusCode == 200, let data = data else {
+            return Result.error(ChampionsAPIError.connection)
+        }
+        
+        
+        let json = JSON(data: data)
+        
+        guard let dataJson = json["data"].dictionary else { return Result.error(ChampionsAPIError.connection) }
+        
+        let champions = dataJson.map({ (key: String, value: JSON) -> LoLChampion? in
+            
+            guard
+                let name = value["name"].string,
+                let championKey = value["key"].string
+                else { return nil }
+            
+            return LoLChampion(name: name, key: championKey)
+            
+        }).flatMap({ $0 })
+        
+        return Result.success(champions)
     }
-    
-    /*
- 
- 
- guard let data = json["data"].dictionary else { return nil }
- 
- let champions = data.map({ (key: String, value: JSON) -> LoLChampion? in
- 
- guard
- let name = value["name"].string,
- let championKey = value["key"].string
- else { return nil }
- 
- return LoLChampion(name: name, key: championKey)
- 
- }).flatMap({ $0 })
- 
- return champions
- 
- */
- 
 }
 
 enum ChampionsAPIError: Error {

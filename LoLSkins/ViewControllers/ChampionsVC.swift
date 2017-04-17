@@ -21,10 +21,14 @@ class ChampionsVC: UICollectionViewController {
     // MARK: dependencies
     
     // lazy var championsController: ChampionsController = ChampionsController()
+    
+    let championsAPI = ChampionsAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        championsAPI.fetchChampions()
         
         collectionView?.delegate = self
         
