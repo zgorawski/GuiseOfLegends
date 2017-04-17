@@ -6,8 +6,8 @@
 //  Copyright © 2017 Zbigniew Górawski. All rights reserved.
 //
 
-import Alamofire
 import SOLIDNetworking
+import Alamofire
 import SwiftyJSON
 
 class ChampionsAPI {
@@ -20,18 +20,32 @@ class ChampionsAPI {
         self.engine = engine
     }
     
+    // MARK: Cache
+    
+    private static var champions: [LoLChampion]? = nil
+    
     // MARK: API
     
-    func fetchChampions() {
+    func fetchChampions(handler: @escaping (Result<[LoLChampion], ChampionsAPIError>) -> Void) {
         
         guard let apiKey = apiKey else { return }
         
         let request = GetChampionsRequest(apiKey: apiKey)
-        engine.performRequest(request: request, handler: { _ in })
+        engine.performRequest(request: request) { result in
+            
+            switch result {
+            case .success(let champions):
+                ChampionsAPI.champions = champions
+                handler(.success(champions))
+            case .error(let error):
+                handler(.error(error))
+            }
+            
+        }
     }
     
-    func getChampions() {
-        
+    func getChampions() -> [LoLChampion]? {
+        return ChampionsAPI.champions
     }
     
     // MARK: Private
@@ -47,9 +61,6 @@ struct GetChampionsRequest: SOLIDNetworking.Request {
     init(apiKey: String) {
         self.apiKey = apiKey
     }
-    
-    // /api/lol/static-data/eune/v1.2/champion"
-    // https://eun1.api.riotgames.com/lol/static-data/v3/champions?champData=skins&api_key=102aae41-5d53-49eb-ac7d-d21b4b9c9a2a
     
     var httpMethod: HTTPMethod { return .get }
     var host: String { return "eun1.api.riotgames.com" }
@@ -67,13 +78,12 @@ class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
     func interpret(data: Data?, response: HTTPURLResponse?, error: Error?) -> SOLIDNetworking.Result<[LoLChampion], ChampionsAPIError> {
         
         guard error == nil, response?.statusCode == 200, let data = data else {
-            return Result.error(ChampionsAPIError.connection)
+            return SOLIDNetworking.Result.error(ChampionsAPIError.connection)
         }
-        
         
         let json = JSON(data: data)
         
-        guard let dataJson = json["data"].dictionary else { return Result.error(ChampionsAPIError.connection) }
+        guard let dataJson = json["data"].dictionary else { return SOLIDNetworking.Result.error(ChampionsAPIError.connection) }
         
         let champions = dataJson.map({ (key: String, value: JSON) -> LoLChampion? in
             
@@ -86,7 +96,7 @@ class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
             
         }).flatMap({ $0 })
         
-        return Result.success(champions)
+        return SOLIDNetworking.Result.success(champions)
     }
 }
 

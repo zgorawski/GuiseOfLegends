@@ -28,7 +28,7 @@ class ChampionsVC: UICollectionViewController {
         super.viewDidLoad()
 
         
-        championsAPI.fetchChampions()
+        championsAPI.fetchChampions { _ in }
         
         collectionView?.delegate = self
         

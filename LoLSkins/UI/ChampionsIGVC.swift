@@ -11,16 +11,14 @@ import IGListKit
 
 class ChampionsIGVC: UIViewController, IGListAdapterDataSource {
     
-    var collectionView: IGListCollectionView!
+    @IBOutlet weak var collectionView: IGListCollectionView!
+    var adapter: IGListAdapter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layout = UICollectionViewFlowLayout()
-        collectionView = IGListCollectionView(frame: .zero, collectionViewLayout: layout)
-        
         let updater = IGListAdapterUpdater()
-        let adapter = IGListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
+        adapter = IGListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
@@ -54,11 +52,11 @@ class LabelSectionController: IGListSectionController, IGListSectionType {
     }
     
     func cellForItem(at index: Int) -> UICollectionViewCell {
-        let cell = collectionContext!.dequeueReusableCell(of: ChampionsCell.self, for: self, at: index) as! ChampionsCell
-        cell.championNameLabel.text = object
+        let cell = collectionContext!.dequeueReusableCell(of: IGChampionsCell.self, for: self, at: index) as! IGChampionsCell
+        //cell.championNameLabel.text = object
         return cell
     }
-    
+
     func didUpdate(to object: Any) {
         self.object = String(describing: object)
     }
@@ -66,3 +64,10 @@ class LabelSectionController: IGListSectionController, IGListSectionType {
     func didSelectItem(at index: Int) {}
     
 }
+
+class IGChampionsCell: UICollectionViewCell {
+    
+    @IBOutlet weak var championNameLabel: UILabel!
+}
+
+

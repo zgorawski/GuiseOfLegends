@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B61E9901D2D816900BD35A5 /* ChampionsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B61E98F1D2D816900BD35A5 /* ChampionsList.storyboard */; };
 		6B61E9961D2D858900BD35A5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B61E9951D2D858900BD35A5 /* Cartfile */; };
 		6B81658E1D377ED300BE4699 /* UIColor+ColorFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81658D1D377ED300BE4699 /* UIColor+ColorFromString.swift */; };
-		6BC76A3F1D3254C200E8BFF4 /* ChampionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A3E1D3254C200E8BFF4 /* ChampionsVC.swift */; };
-		6BC76A411D32550B00E8BFF4 /* ChampionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A401D32550B00E8BFF4 /* ChampionsCell.swift */; };
 		6BC76A461D325B9800E8BFF4 /* PListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC76A451D325B9800E8BFF4 /* PListStorage.swift */; };
 		6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF841D299A7600076F50 /* AppDelegate.swift */; };
 		6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */; };
 		6BE3AF9A1D299A7700076F50 /* LoLSkinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AF991D299A7700076F50 /* LoLSkinsTests.swift */; };
 		6BE3AFA51D299A7700076F50 /* LoLSkinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */; };
-		9940E85D1E2A9112000A51F2 /* ChampionsIGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9940E85C1E2A9112000A51F2 /* ChampionsIGVC.swift */; };
+		990677A11EA5466F00FFFB68 /* ChampionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906779D1EA5466F00FFFB68 /* ChampionsCell.swift */; };
+		990677A21EA5466F00FFFB68 /* ChampionsIGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906779E1EA5466F00FFFB68 /* ChampionsIGVC.swift */; };
+		990677A31EA5466F00FFFB68 /* ChampionsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9906779F1EA5466F00FFFB68 /* ChampionsList.storyboard */; };
+		990677A41EA5466F00FFFB68 /* ChampionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990677A01EA5466F00FFFB68 /* ChampionsVC.swift */; };
+		990677A61EA546DC00FFFB68 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990677A51EA546DC00FFFB68 /* Result.swift */; };
+		990677A91EA549F400FFFB68 /* ChampionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990677A81EA549F400FFFB68 /* ChampionsPresenter.swift */; };
 		998225091E27ED310011CB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998225081E27ED310011CB28 /* Assets.xcassets */; };
 		9982250B1E28143E0011CB28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9982250A1E28143E0011CB28 /* .gitignore */; };
 		9982250D1E2814670011CB28 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982250C1E2814670011CB28 /* APIKey.plist */; };
@@ -47,12 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B61E98F1D2D816900BD35A5 /* ChampionsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ChampionsList.storyboard; path = ../Storyboards/ChampionsList.storyboard; sourceTree = "<group>"; };
 		6B61E9951D2D858900BD35A5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6B61E9971D2D920D00BD35A5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6B81658D1D377ED300BE4699 /* UIColor+ColorFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorFromString.swift"; sourceTree = "<group>"; };
-		6BC76A3E1D3254C200E8BFF4 /* ChampionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsVC.swift; sourceTree = "<group>"; };
-		6BC76A401D32550B00E8BFF4 /* ChampionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsCell.swift; sourceTree = "<group>"; };
 		6BC76A451D325B9800E8BFF4 /* PListStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListStorage.swift; sourceTree = "<group>"; };
 		6BE3AF811D299A7500076F50 /* LoLSkins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLSkins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AF841D299A7600076F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +63,13 @@
 		6BE3AFA01D299A7700076F50 /* LoLSkinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLSkinsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE3AFA41D299A7700076F50 /* LoLSkinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLSkinsUITests.swift; sourceTree = "<group>"; };
 		6BE3AFA61D299A7700076F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9906779D1EA5466F00FFFB68 /* ChampionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsCell.swift; sourceTree = "<group>"; };
+		9906779E1EA5466F00FFFB68 /* ChampionsIGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsIGVC.swift; sourceTree = "<group>"; };
+		9906779F1EA5466F00FFFB68 /* ChampionsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChampionsList.storyboard; sourceTree = "<group>"; };
+		990677A01EA5466F00FFFB68 /* ChampionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsVC.swift; sourceTree = "<group>"; };
+		990677A51EA546DC00FFFB68 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		990677A81EA549F400FFFB68 /* ChampionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsPresenter.swift; sourceTree = "<group>"; };
 		9940E85A1E2A5FA8000A51F2 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
-		9940E85C1E2A9112000A51F2 /* ChampionsIGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionsIGVC.swift; sourceTree = "<group>"; };
 		998225001E27EC680011CB28 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		998225041E27EC880011CB28 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		998225081E27ED310011CB28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,22 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B61E98A1D2D810200BD35A5 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6B61E98E1D2D812D00BD35A5 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6BC76A3E1D3254C200E8BFF4 /* ChampionsVC.swift */,
-				9940E85C1E2A9112000A51F2 /* ChampionsIGVC.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		6B61E9911D2D81CA00BD35A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,14 +122,6 @@
 				6B81658D1D377ED300BE4699 /* UIColor+ColorFromString.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6BC76A3C1D3253D200E8BFF4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6BC76A401D32550B00E8BFF4 /* ChampionsCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		6BC76A441D325B8700E8BFF4 /* Storage */ = {
@@ -182,12 +162,11 @@
 				998225081E27ED310011CB28 /* Assets.xcassets */,
 				99BA39B91EA403D200818C1D /* UI */,
 				6B61E9911D2D81CA00BD35A5 /* Resources */,
+				990677A71EA5496500FFFB68 /* Presenters */,
 				99BA39B61EA4022300818C1D /* APIGateway */,
 				6BC76A441D325B8700E8BFF4 /* Storage */,
-				6BC76A3C1D3253D200E8BFF4 /* Views */,
-				6B61E98E1D2D812D00BD35A5 /* ViewControllers */,
-				6B61E98A1D2D810200BD35A5 /* Controllers */,
 				6B81658C1D377EAE00BE4699 /* Extensions */,
+				9906779C1EA5462100FFFB68 /* Models */,
 				6BE3AF841D299A7600076F50 /* AppDelegate.swift */,
 				6BE3AF901D299A7600076F50 /* Info.plist */,
 			);
@@ -212,6 +191,34 @@
 			path = LoLSkinsUITests;
 			sourceTree = "<group>";
 		};
+		9906779B1EA5409200FFFB68 /* ChampionsList */ = {
+			isa = PBXGroup;
+			children = (
+				9906779D1EA5466F00FFFB68 /* ChampionsCell.swift */,
+				9906779E1EA5466F00FFFB68 /* ChampionsIGVC.swift */,
+				9906779F1EA5466F00FFFB68 /* ChampionsList.storyboard */,
+				990677A01EA5466F00FFFB68 /* ChampionsVC.swift */,
+			);
+			name = ChampionsList;
+			sourceTree = "<group>";
+		};
+		9906779C1EA5462100FFFB68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				990677A51EA546DC00FFFB68 /* Result.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		990677A71EA5496500FFFB68 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				990677A81EA549F400FFFB68 /* ChampionsPresenter.swift */,
+			);
+			name = Presenters;
+			path = LoLSkins/Presenters;
+			sourceTree = SOURCE_ROOT;
+		};
 		998224FF1E27EC680011CB28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +242,8 @@
 		99BA39B91EA403D200818C1D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9906779B1EA5409200FFFB68 /* ChampionsList */,
 				6BE3AF8D1D299A7600076F50 /* LaunchScreen.storyboard */,
-				6B61E98F1D2D816900BD35A5 /* ChampionsList.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -355,9 +362,9 @@
 				9982250B1E28143E0011CB28 /* .gitignore in Resources */,
 				6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */,
 				6B61E9961D2D858900BD35A5 /* Cartfile in Resources */,
+				990677A31EA5466F00FFFB68 /* ChampionsList.storyboard in Resources */,
 				9982250D1E2814670011CB28 /* APIKey.plist in Resources */,
 				998225091E27ED310011CB28 /* Assets.xcassets in Resources */,
-				6B61E9901D2D816900BD35A5 /* ChampionsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,12 +411,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B81658E1D377ED300BE4699 /* UIColor+ColorFromString.swift in Sources */,
-				6BC76A411D32550B00E8BFF4 /* ChampionsCell.swift in Sources */,
-				6BC76A3F1D3254C200E8BFF4 /* ChampionsVC.swift in Sources */,
+				990677A21EA5466F00FFFB68 /* ChampionsIGVC.swift in Sources */,
 				99BA39B81EA4027C00818C1D /* ChampionsAPI.swift in Sources */,
 				6BC76A461D325B9800E8BFF4 /* PListStorage.swift in Sources */,
+				990677A11EA5466F00FFFB68 /* ChampionsCell.swift in Sources */,
+				990677A41EA5466F00FFFB68 /* ChampionsVC.swift in Sources */,
+				990677A61EA546DC00FFFB68 /* Result.swift in Sources */,
 				6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */,
-				9940E85D1E2A9112000A51F2 /* ChampionsIGVC.swift in Sources */,
+				990677A91EA549F400FFFB68 /* ChampionsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
