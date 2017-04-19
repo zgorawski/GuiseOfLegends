@@ -194,10 +194,10 @@
 		9906779B1EA5409200FFFB68 /* ChampionsList */ = {
 			isa = PBXGroup;
 			children = (
-				9906779D1EA5466F00FFFB68 /* ChampionsCell.swift */,
-				9906779E1EA5466F00FFFB68 /* ChampionsIGVC.swift */,
 				9906779F1EA5466F00FFFB68 /* ChampionsList.storyboard */,
 				990677A01EA5466F00FFFB68 /* ChampionsVC.swift */,
+				9906779D1EA5466F00FFFB68 /* ChampionsCell.swift */,
+				9906779E1EA5466F00FFFB68 /* ChampionsIGVC.swift */,
 			);
 			name = ChampionsList;
 			sourceTree = "<group>";

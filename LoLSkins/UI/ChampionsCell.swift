@@ -10,6 +10,5 @@ import UIKit
 
 class ChampionsCell: UICollectionViewCell {
     
-    @IBOutlet weak var championNameLabel: UILabel!
     @IBOutlet weak var portraitImageView: UIImageView!
 }

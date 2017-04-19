@@ -51,7 +51,11 @@ class ChampionsPresenter {
     // MARK: Private
     
     private func convertToVM(model: [LoLChampion]) -> [ChampionsVM] {
-        return model.map { _ in return ChampionsVM() }
+        return model.map { champion in
+            
+            let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/7.7.1/img/champion/\(champion.key).png")!
+            return ChampionsVM(key: champion.key, imageUrl: url)
+        }
     }
     
     private func convertToVM(error: ChampionsAPIError) -> ErrorVM {
@@ -61,8 +65,8 @@ class ChampionsPresenter {
 
 struct ChampionsVM {
     
-    // http://ddragon.leagueoflegends.com/cdn/7.7.1/img/champion/Aatrox.png
-    
+    let key: String
+    let imageUrl: URL
 }
 
 struct ErrorVM {

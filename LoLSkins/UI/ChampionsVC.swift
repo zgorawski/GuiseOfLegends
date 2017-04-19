@@ -9,49 +9,26 @@
 import UIKit
 import AlamofireImage
 
-class ChampionsVC: UICollectionViewController {
+class ChampionsVC: UIViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate let championsCellRI = "ChampionsCell"
-    fileprivate var model: [LoLChampion] = [] {
-        didSet {
-            collectionView?.reloadData()
-        }
-    }
+    fileprivate var viewModel: [ChampionsVM] = []
     
     // MARK: dependencies
     
-    // lazy var championsController: ChampionsController = ChampionsController()
-    
-    let championsAPI = ChampionsAPI()
+    fileprivate var championsPresenter: ChampionsPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        championsAPI.fetchChampions { _ in }
+        championsPresenter = ChampionsPresenter(subscriber: self)
         
-        collectionView?.delegate = self
+        collectionView.dataSource = self
         
-        // collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: 35.0, bottom: 0.0, right: 35.0)
+        // setContentInsets()
         
-
-        setContentInsets()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        // self.collectionView!.registerClass(ChampionsCell.self, forCellWithReuseIdentifier: championsCellRI)
-        
-
-        // Do any additional setup after loading the view.
-        /*
-        championsController.fetchChampions { champions in
-            if let champions = champions {
-                self.model = champions
-            }
-        }
- */
     }
     
     func setContentInsets() {
@@ -72,116 +49,46 @@ class ChampionsVC: UICollectionViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
+
+}
+
+extension ChampionsVC: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return model.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: championsCellRI, for: indexPath)
     
-        // Configure the cell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return viewModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: championsCellRI, for: indexPath)
+        
         if let championsCell = cell as? ChampionsCell {
             
-            championsCell.backgroundColor = UIColor(randomString: model[indexPath.item].name)
-            championsCell.championNameLabel.text = model[indexPath.item].name
-            
-            let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/7.1.1/img/champion/\(model[indexPath.item].key).png")!
-            championsCell.portraitImageView.af_setImage(withURL: url)
+            let championVM = viewModel[indexPath.item]
+            championsCell.backgroundColor = UIColor(randomString: championVM.key)
+            championsCell.portraitImageView.af_setImage(withURL: championVM.imageUrl)
         }
-    
+        
         return cell
     }
-    
-    
+}
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+extension ChampionsVC: ChampionsPresenterSubscriber {
+    
+    func present(champions: [ChampionsVM]) {
+        viewModel = champions
+        collectionView.reloadData()
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
+    func show(error: ErrorVM) {
+        print("error: \(error.title): \(error.message)")
     }
-    */
-
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        
-//        let itemWidth = 120.0
-//        let containerWidth = Double(collectionView.contentSize.width)
-//        let elements = containerWidth % itemWidth
-//        let emptySpace = containerWidth - itemWidth * elements
-//        let marginSpace = emptySpace / (elements + 1.0)
-//        
-//        return UIEdgeInsets(top: 0.0, left: CGFloat(marginSpace), bottom: 0.0, right: CGFloat(marginSpace))
-//        
-//    }
-    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-//        
-//        let itemWidth = 120.0
-//        let containerWidth = Double(collectionView.contentSize.width)
-//        let elements = containerWidth % itemWidth
-//        let emptySpace = containerWidth - itemWidth * elements
-//        let marginSpace = emptySpace / (elements + 1.0)
-//        
-//        return CGFloat(marginSpace)
-//        
-//    }
-    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//        
-//        let itemWidth = 120.0
-//        let containerWidth = Double(collectionView.contentSize.width)
-//        let elements = containerWidth % itemWidth
-//        let emptySpace = containerWidth - itemWidth * elements
-//        let marginSpace = emptySpace / elements + itemWidth
-//        
-//        return CGFloat(marginSpace)
-//    }
 }

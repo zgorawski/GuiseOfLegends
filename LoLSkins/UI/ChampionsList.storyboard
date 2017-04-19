@@ -6,68 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ChampionsVC-->
-        <scene sceneID="YOc-Em-5K3">
-            <objects>
-                <collectionViewController id="hAJ-ak-Wc4" customClass="ChampionsVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5oK-hq-KXu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IqZ-Zn-SqT">
-                            <size key="itemSize" width="120" height="120"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChampionsCell" id="AYj-nJ-3ec" customClass="ChampionsCell" customModule="LoLSkins" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8gq-Z1-AJC">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                        </imageView>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4r-aq-uDt">
-                                            <rect key="frame" x="8" y="50" width="104" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8gq-Z1-AJC" secondAttribute="trailing" id="5DK-Va-vvv"/>
-                                    <constraint firstItem="d4r-aq-uDt" firstAttribute="leading" secondItem="AYj-nJ-3ec" secondAttribute="leadingMargin" id="LaH-Jh-dlW"/>
-                                    <constraint firstItem="8gq-Z1-AJC" firstAttribute="leading" secondItem="AYj-nJ-3ec" secondAttribute="leading" id="NbV-gv-5Me"/>
-                                    <constraint firstItem="8gq-Z1-AJC" firstAttribute="top" secondItem="AYj-nJ-3ec" secondAttribute="top" id="Q23-yg-fzs"/>
-                                    <constraint firstAttribute="bottom" secondItem="8gq-Z1-AJC" secondAttribute="bottom" id="UDc-l9-Pbm"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="d4r-aq-uDt" secondAttribute="trailing" id="d7U-UW-DeH"/>
-                                    <constraint firstItem="d4r-aq-uDt" firstAttribute="centerY" secondItem="AYj-nJ-3ec" secondAttribute="centerY" id="neD-2A-61b"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="championNameLabel" destination="d4r-aq-uDt" id="Yx1-3A-RLM"/>
-                                    <outlet property="portraitImageView" destination="8gq-Z1-AJC" id="xzH-FC-PC9"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="hAJ-ak-Wc4" id="vhS-RB-vLI"/>
-                            <outlet property="delegate" destination="hAJ-ak-Wc4" id="yWr-iw-GwB"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="0Qs-Li-rYY"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SH8-mZ-B7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="465" y="443"/>
-        </scene>
         <!--ChampionsIGVC-->
         <scene sceneID="xKW-tR-t8C">
             <objects>
@@ -141,40 +82,76 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hAJ-ak-Wc4" kind="relationship" relationship="rootViewController" id="zJE-Jq-9lc"/>
+                        <segue destination="Tl3-L4-UM7" kind="relationship" relationship="rootViewController" id="jpV-uo-yjd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uec-ON-LMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-405" y="443"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="YW4-de-bFa">
+        <!--ChampionsVC-->
+        <scene sceneID="Km4-Vi-52z">
             <objects>
-                <tableViewController id="LBL-7y-O7Q" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TWD-XZ-AEq">
+                <viewController id="Tl3-L4-UM7" customClass="ChampionsVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jaa-ke-qlU"/>
+                        <viewControllerLayoutGuide type="bottom" id="2RN-e6-T83"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jRp-Ed-o1H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3kK-gW-1Ee">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3kK-gW-1Ee" id="xkX-yv-BT5">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LBL-7y-O7Q" id="qwo-1G-8UI"/>
-                            <outlet property="delegate" destination="LBL-7y-O7Q" id="Y19-Fa-5qI"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KBB-sJ-Kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Js-t90">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0m1-s3-JPr">
+                                    <size key="itemSize" width="145" height="145"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChampionsCell" id="4U1-0p-rqq" customClass="ChampionsCell" customModule="LoLSkins" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-qj-R1k">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bxS-qj-R1k" secondAttribute="trailing" id="dcx-nh-4JS"/>
+                                            <constraint firstItem="bxS-qj-R1k" firstAttribute="top" secondItem="4U1-0p-rqq" secondAttribute="top" id="frM-Nu-M1X"/>
+                                            <constraint firstAttribute="bottom" secondItem="bxS-qj-R1k" secondAttribute="bottom" id="jDv-ce-Z3T"/>
+                                            <constraint firstItem="bxS-qj-R1k" firstAttribute="leading" secondItem="4U1-0p-rqq" secondAttribute="leading" id="pOg-az-ove"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="portraitImageView" destination="bxS-qj-R1k" id="vMa-FQ-ZVN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZY3-Js-t90" firstAttribute="bottom" secondItem="2RN-e6-T83" secondAttribute="top" id="Fl2-jr-P6c"/>
+                            <constraint firstItem="ZY3-Js-t90" firstAttribute="top" secondItem="jRp-Ed-o1H" secondAttribute="top" id="ObY-J4-Icz"/>
+                            <constraint firstItem="ZY3-Js-t90" firstAttribute="leading" secondItem="jRp-Ed-o1H" secondAttribute="leading" id="aBn-R2-sCk"/>
+                            <constraint firstAttribute="trailing" secondItem="ZY3-Js-t90" secondAttribute="trailing" id="z9X-op-S1V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="65I-1T-wqF"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ZY3-Js-t90" id="d1D-mc-kx7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07D-eY-7qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="443"/>
+            <point key="canvasLocation" x="397.5" y="442.6056338028169"/>
         </scene>
     </scenes>
 </document>
