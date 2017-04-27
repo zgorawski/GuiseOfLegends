@@ -1,157 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tsu-qT-vDf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3fC-pR-sVX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ChampionsIGVC-->
-        <scene sceneID="xKW-tR-t8C">
-            <objects>
-                <viewController id="yjk-8R-sDN" customClass="ChampionsIGVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cEX-Sd-S4Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="tOQ-OK-ejf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="17L-dr-y0H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G8J-4N-Q0O" customClass="IGListCollectionView">
-                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Jz-oT-YmY">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IGChampionsCell" id="943-Us-1HC" customClass="IGChampionsCell" customModule="LoLSkins" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJD-6G-Bam">
-                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="WJD-6G-Bam" firstAttribute="centerY" secondItem="943-Us-1HC" secondAttribute="centerY" id="BVP-pS-UYY"/>
-                                            <constraint firstItem="WJD-6G-Bam" firstAttribute="centerX" secondItem="943-Us-1HC" secondAttribute="centerX" id="b7o-NT-dMo"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="championNameLabel" destination="WJD-6G-Bam" id="fjP-B8-ntp"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="G8J-4N-Q0O" firstAttribute="leading" secondItem="17L-dr-y0H" secondAttribute="leading" id="1gw-r5-zz2"/>
-                            <constraint firstAttribute="trailing" secondItem="G8J-4N-Q0O" secondAttribute="trailing" id="JPq-iF-diw"/>
-                            <constraint firstItem="G8J-4N-Q0O" firstAttribute="top" secondItem="cEX-Sd-S4Z" secondAttribute="bottom" constant="8" symbolic="YES" id="Zlh-t3-AiV"/>
-                            <constraint firstItem="G8J-4N-Q0O" firstAttribute="bottom" secondItem="tOQ-OK-ejf" secondAttribute="top" id="pzI-5U-VH5"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="G8J-4N-Q0O" id="CtT-8U-o8z"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gyT-yu-Sah" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-405" y="-274.64788732394368"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7mi-Mo-wHn">
-            <objects>
-                <navigationController id="tsu-qT-vDf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I3y-zJ-tLv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Tl3-L4-UM7" kind="relationship" relationship="rootViewController" id="jpV-uo-yjd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uec-ON-LMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-405" y="443"/>
-        </scene>
         <!--ChampionsVC-->
-        <scene sceneID="Km4-Vi-52z">
+        <scene sceneID="Pei-gX-LPe">
             <objects>
-                <viewController id="Tl3-L4-UM7" customClass="ChampionsVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3fC-pR-sVX" customClass="ChampionsVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jaa-ke-qlU"/>
-                        <viewControllerLayoutGuide type="bottom" id="2RN-e6-T83"/>
+                        <viewControllerLayoutGuide type="top" id="vnP-j7-53A"/>
+                        <viewControllerLayoutGuide type="bottom" id="zj8-mV-jA0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jRp-Ed-o1H">
+                    <view key="view" contentMode="scaleToFill" id="zKz-Wu-98A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Js-t90">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0m1-s3-JPr">
-                                    <size key="itemSize" width="145" height="145"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-eO-tQx">
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ACN-Sp-jT0"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q4e-gC-472">
+                                <rect key="frame" x="0.0" y="78" width="320" height="490"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QuF-HK-PzW">
+                                    <size key="itemSize" width="132" height="142"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChampionsCell" id="4U1-0p-rqq" customClass="ChampionsCell" customModule="LoLSkins" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChampionsCellRI" id="TQg-BO-GEM" customClass="ChampionsCell" customModule="LoLSkins" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="142"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="132" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-qj-R1k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-vR-eva">
+                                                    <rect key="frame" x="0.0" y="0.0" width="132" height="142"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="bxS-qj-R1k" secondAttribute="trailing" id="dcx-nh-4JS"/>
-                                            <constraint firstItem="bxS-qj-R1k" firstAttribute="top" secondItem="4U1-0p-rqq" secondAttribute="top" id="frM-Nu-M1X"/>
-                                            <constraint firstAttribute="bottom" secondItem="bxS-qj-R1k" secondAttribute="bottom" id="jDv-ce-Z3T"/>
-                                            <constraint firstItem="bxS-qj-R1k" firstAttribute="leading" secondItem="4U1-0p-rqq" secondAttribute="leading" id="pOg-az-ove"/>
+                                            <constraint firstItem="fhe-vR-eva" firstAttribute="top" secondItem="TQg-BO-GEM" secondAttribute="top" id="AsD-Hi-IVM"/>
+                                            <constraint firstAttribute="bottom" secondItem="fhe-vR-eva" secondAttribute="bottom" id="GQn-dM-sHf"/>
+                                            <constraint firstItem="fhe-vR-eva" firstAttribute="leading" secondItem="TQg-BO-GEM" secondAttribute="leading" id="ZZy-gb-wO9"/>
+                                            <constraint firstAttribute="trailing" secondItem="fhe-vR-eva" secondAttribute="trailing" id="Zam-YW-Xym"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="portraitImageView" destination="bxS-qj-R1k" id="vMa-FQ-ZVN"/>
+                                            <outlet property="portraitImageView" destination="fhe-vR-eva" id="lNv-lP-pJ1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZY3-Js-t90" firstAttribute="bottom" secondItem="2RN-e6-T83" secondAttribute="top" id="Fl2-jr-P6c"/>
-                            <constraint firstItem="ZY3-Js-t90" firstAttribute="top" secondItem="jRp-Ed-o1H" secondAttribute="top" id="ObY-J4-Icz"/>
-                            <constraint firstItem="ZY3-Js-t90" firstAttribute="leading" secondItem="jRp-Ed-o1H" secondAttribute="leading" id="aBn-R2-sCk"/>
-                            <constraint firstAttribute="trailing" secondItem="ZY3-Js-t90" secondAttribute="trailing" id="z9X-op-S1V"/>
+                            <constraint firstItem="NPm-eO-tQx" firstAttribute="leading" secondItem="zKz-Wu-98A" secondAttribute="leading" id="006-8T-hNS"/>
+                            <constraint firstItem="q4e-gC-472" firstAttribute="leading" secondItem="zKz-Wu-98A" secondAttribute="leading" id="NTa-Go-ThR"/>
+                            <constraint firstItem="q4e-gC-472" firstAttribute="top" secondItem="NPm-eO-tQx" secondAttribute="bottom" constant="8" id="QfI-QP-LMl"/>
+                            <constraint firstItem="NPm-eO-tQx" firstAttribute="top" secondItem="vnP-j7-53A" secondAttribute="bottom" id="UGL-dX-9wU"/>
+                            <constraint firstAttribute="trailing" secondItem="NPm-eO-tQx" secondAttribute="trailing" id="bsK-0p-LD7"/>
+                            <constraint firstItem="zj8-mV-jA0" firstAttribute="top" secondItem="q4e-gC-472" secondAttribute="bottom" id="opJ-z9-kD4"/>
+                            <constraint firstAttribute="trailing" secondItem="q4e-gC-472" secondAttribute="trailing" id="zGm-50-YDN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="65I-1T-wqF"/>
                     <connections>
-                        <outlet property="collectionView" destination="ZY3-Js-t90" id="d1D-mc-kx7"/>
+                        <outlet property="collectionView" destination="q4e-gC-472" id="tqs-Ga-BDw"/>
+                        <outlet property="searchPlaceholderView" destination="NPm-eO-tQx" id="41R-B9-buQ"/>
+                        <segue destination="tVn-WC-CcG" kind="show" identifier="showSkins" id="NBb-V9-qFg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="07D-eY-7qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F42-7L-Ijx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="397.5" y="442.6056338028169"/>
+            <point key="canvasLocation" x="474.375" y="442.6056338028169"/>
+        </scene>
+        <!--ChampionSkins-->
+        <scene sceneID="tz0-N6-mL8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChampionSkins" id="tVn-WC-CcG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIG-9I-CYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="443"/>
         </scene>
     </scenes>
 </document>

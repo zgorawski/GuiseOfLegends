@@ -12,47 +12,89 @@ import AlamofireImage
 class ChampionsVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchPlaceholderView: UIView!
     
-    fileprivate let championsCellRI = "ChampionsCell"
-    fileprivate var viewModel: [ChampionsVM] = []
+    fileprivate let championsCellRI = "ChampionsCellRI"
+    fileprivate var champions: [ChampionsVM] = [] { didSet { filter(filter) }}
+    fileprivate var filtered: [ChampionsVM] = []
+    fileprivate var filter: String? = nil
+
     
     // MARK: dependencies
     
     fileprivate var championsPresenter: ChampionsPresenter!
+    fileprivate var searchController: UISearchController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         championsPresenter = ChampionsPresenter(subscriber: self)
         
-        collectionView.dataSource = self
+        collectionView.dataSource = self        
+        collectionView.delegate = self
         
-        // setContentInsets()
+        // configure search controller
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
         
+        searchController.searchBar.delegate = self
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.isTranslucent = true
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.showsCancelButton = false
+        
+        searchPlaceholderView.addSubview(searchController.searchBar)
     }
     
-    func setContentInsets() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let itemWidth: CGFloat = 120.0
-        let minSpacingForCells: CGFloat = 10.0
-        let containerWidth = CGFloat(collectionView!.bounds.width)
-        
-        let elementsCount = floor((containerWidth + minSpacingForCells) / (itemWidth + minSpacingForCells))
-        let freeSpace = containerWidth - elementsCount * itemWidth
-        let newSpacing = max(minSpacingForCells, freeSpace / (elementsCount + 1.0))
-        let spaceForMargins = freeSpace - newSpacing * (elementsCount - 1.0)
-        let margin = spaceForMargins / 2.0
-        
-        print("calculated margin: \(margin)")
-        
-        collectionView?.contentInset = UIEdgeInsets(top: 0.0, left: margin, bottom: 0.0, right: margin)
-        
+        searchController.searchBar.sizeToFit()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    func filter(_ filter: String?) {
+        
+        defer {
+            collectionView.reloadData()
+        }
+        
+        guard let f = filter, !f.isEmpty else {
+            filtered = champions
+            searchController.searchBar.placeholder = "Search"
+            return
+        }
+        
+        searchController.searchBar.placeholder = f
+        filtered = champions.filter({ $0.key.lowercased().contains(f.lowercased())})
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let model = sender as? ChampionsVM,
+            segue.identifier == "showSkins",
+            let vc = segue.destination as? ChampionSkinVC {
+            
+            vc.championId = model.key
+        }
+    }
+}
 
-    // MARK: UICollectionViewDataSource
+extension ChampionsVC: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filter(nil)
+    }
+}
 
+extension ChampionsVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
 
-
+        guard searchController.isActive else { return }
+        filter(searchController.searchBar.text)
+    }
 }
 
 extension ChampionsVC: UICollectionViewDataSource {
@@ -62,8 +104,7 @@ extension ChampionsVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return viewModel.count
+        return filtered.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +112,7 @@ extension ChampionsVC: UICollectionViewDataSource {
         
         if let championsCell = cell as? ChampionsCell {
             
-            let championVM = viewModel[indexPath.item]
+            let championVM = filtered[indexPath.item]
             championsCell.backgroundColor = UIColor(randomString: championVM.key)
             championsCell.portraitImageView.af_setImage(withURL: championVM.imageUrl)
         }
@@ -80,11 +121,24 @@ extension ChampionsVC: UICollectionViewDataSource {
     }
 }
 
+
+extension ChampionsVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 64, height: 64)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showSkins", sender: filtered[indexPath.item])
+    }
+}
+
 extension ChampionsVC: ChampionsPresenterSubscriber {
     
     func present(champions: [ChampionsVM]) {
-        viewModel = champions
-        collectionView.reloadData()
+        self.champions = champions
     }
     
     func show(error: ErrorVM) {
