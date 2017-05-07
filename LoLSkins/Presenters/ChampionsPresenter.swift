@@ -16,11 +16,11 @@ protocol ChampionsPresenterSubscriber: class {
 class ChampionsPresenter {
     
     private weak var subscriber: ChampionsPresenterSubscriber!
-    private let championsAPI: ChampionsAPI
+    private let staticAPI: StaticDataAPI
     
-    init(subscriber: ChampionsPresenterSubscriber, championsAPI: ChampionsAPI = ChampionsAPI()) {
+    init(subscriber: ChampionsPresenterSubscriber, staticAPI: StaticDataAPI = StaticDataAPI()) {
         self.subscriber = subscriber
-        self.championsAPI = championsAPI
+        self.staticAPI = staticAPI
         
         refreshChampions()
     }
@@ -29,12 +29,12 @@ class ChampionsPresenter {
     
     func refreshChampions() {
         
-        if let model = championsAPI.getChampions() {
+        if let model = staticAPI.getChampions() {
             let vm = convertToVM(model: model)
             subscriber.present(champions: vm)
         } else {
             
-            championsAPI.fetchChampions { [unowned self] result in
+            staticAPI.fetchChampions { [unowned self] result in
                 
                 switch result {
                 case .success(let model):
@@ -58,7 +58,7 @@ class ChampionsPresenter {
         }
     }
     
-    private func convertToVM(error: ChampionsAPIError) -> ErrorVM {
+    private func convertToVM(error: APIError) -> ErrorVM {
         return ErrorVM(title: "error", message: error.localizedDescription)
     }
 }
