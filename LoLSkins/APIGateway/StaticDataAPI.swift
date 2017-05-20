@@ -7,6 +7,7 @@
 //
 
 import SOLIDNetworking
+import ReactiveSwift
 
 class StaticDataAPI {
     
@@ -17,44 +18,47 @@ class StaticDataAPI {
         self.plistStorage = plistStorage
         self.engine = engine
     }
+
+    // MARK: Rx
     
-    // MARK: Cache
-    
-    private static var champions: [LoLChampion]? = nil
-    private static var latestVersion: LoLVersion? = nil
+    let champions = MutableProperty<[LoLChampion]?>(nil)
+    let latestVersion = MutableProperty<LoLVersion?>(nil)
+    let error = MutableProperty<APIError?>(nil)
     
     // MARK: API
     
-    func fetchChampions(handler: @escaping (Result<[LoLChampion], APIError>) -> Void) {
+    func fetchChampions() {
         
         guard let apiKey = apiKey else { return }
         
         let request = GetChampionsRequest(apiKey: apiKey)
-        engine.performRequest(request: request) { result in
+        engine.performRequest(request: request) { [weak self] result in
             
             switch result {
             case .success(let champions):
-                StaticDataAPI.champions = champions
-                handler(.success(champions))
+                self?.champions.value = champions
             case .error(let error):
-                handler(.error(error))
+                self?.error.value = error
             }
-            
         }
     }
     
-    func getChampions() -> [LoLChampion]? {
-        return StaticDataAPI.champions
-    }
-    
-    
-    func fetchLatestVersion(handler: @escaping (Result<LoLVersion, APIError>) -> Void) {
+    func fetchLatestVersion() {
         
+        guard let apiKey = apiKey else { return }
+        
+        let request = GetVersionsRequest(apiKey: apiKey)
+        engine.performRequest(request: request) { [weak self] result in
+            
+            switch result {
+            case .success(let version):
+                self?.latestVersion.value = version
+            case .error(let error):
+                self?.error.value = error
+            }
+        }
     }
     
-    func getLatestVersion() -> LoLVersion? {
-        return StaticDataAPI.latestVersion
-    }
     
     // MARK: Private
     

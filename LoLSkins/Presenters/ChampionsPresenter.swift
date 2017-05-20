@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import ReactiveSwift
+import Result
 
 protocol ChampionsPresenterSubscriber: class {
     func present(champions: [ChampionsVM])
@@ -17,43 +19,32 @@ class ChampionsPresenter {
     
     private weak var subscriber: ChampionsPresenterSubscriber!
     private let staticAPI: StaticDataAPI
+    private let signal:  Signal<([LoLChampion], LoLVersion), NoError>
     
     init(subscriber: ChampionsPresenterSubscriber, staticAPI: StaticDataAPI = StaticDataAPI()) {
         self.subscriber = subscriber
         self.staticAPI = staticAPI
         
-        refreshChampions()
-    }
-    
-    // MARK: API
-    
-    func refreshChampions() {
+        signal = Signal.combineLatest(
+            staticAPI.champions.signal.skipNil(),
+            staticAPI.latestVersion.signal.skipNil())
         
-        if let model = staticAPI.getChampions() {
-            let vm = convertToVM(model: model)
-            subscriber.present(champions: vm)
-        } else {
-            
-            staticAPI.fetchChampions { [unowned self] result in
-                
-                switch result {
-                case .success(let model):
-                    let vm = self.convertToVM(model: model)
-                    self.subscriber.present(champions: vm)
-                case .error(let error):
-                    let vm = self.convertToVM(error: error)
-                    self.subscriber.show(error: vm)
-                }
-            }
+        signal.observeValues { [unowned self] in
+            let vm = self.convertToVM(champions: $0.0, version: $0.1)
+            self.subscriber.present(champions: vm)
         }
+        
+        staticAPI.fetchChampions()
+        staticAPI.fetchLatestVersion()
+        
     }
     
     // MARK: Private
     
-    private func convertToVM(model: [LoLChampion]) -> [ChampionsVM] {
-        return model.map { champion in
-            
-            let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/7.7.1/img/champion/\(champion.key).png")!
+    private func convertToVM(champions: [LoLChampion], version: LoLVersion) -> [ChampionsVM] {
+        
+        return champions.map { champion in
+            let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/\(version)/img/champion/\(champion.key).png")!
             return ChampionsVM(key: champion.key, imageUrl: url)
         }
     }

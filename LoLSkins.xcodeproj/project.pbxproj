@@ -33,9 +33,10 @@
 		9995252D1EB26735009500BE /* SkinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995252C1EB26735009500BE /* SkinCell.swift */; };
 		99BA39B01EA4013F00818C1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9971D2D920D00BD35A5 /* Alamofire.framework */; };
 		99BA39B11EA4014100818C1D /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225001E27EC680011CB28 /* AlamofireImage.framework */; };
-		99BA39B21EA4014400818C1D /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9940E85A1E2A5FA8000A51F2 /* IGListKit.framework */; };
 		99BA39B41EA4014700818C1D /* SOLIDNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */; };
 		99BA39B51EA4014A00818C1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225041E27EC880011CB28 /* SwiftyJSON.framework */; };
+		99FE2D341ED08E0E005EE71A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D331ED08E0E005EE71A /* Result.framework */; };
+		99FE2D361ED08E15005EE71A /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		9995252A1EB264D2009500BE /* ChampionSkinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionSkinVC.swift; sourceTree = "<group>"; };
 		9995252C1EB26735009500BE /* SkinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCell.swift; sourceTree = "<group>"; };
 		99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOLIDNetworking.framework; path = Carthage/Build/iOS/SOLIDNetworking.framework; sourceTree = "<group>"; };
+		99FE2D331ED08E0E005EE71A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +103,10 @@
 			files = (
 				99BA39B01EA4013F00818C1D /* Alamofire.framework in Frameworks */,
 				99BA39B11EA4014100818C1D /* AlamofireImage.framework in Frameworks */,
+				99FE2D361ED08E15005EE71A /* ReactiveSwift.framework in Frameworks */,
 				99BA39B41EA4014700818C1D /* SOLIDNetworking.framework in Frameworks */,
+				99FE2D341ED08E0E005EE71A /* Result.framework in Frameworks */,
 				99BA39B51EA4014A00818C1D /* SwiftyJSON.framework in Frameworks */,
-				99BA39B21EA4014400818C1D /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +267,8 @@
 		998224FF1E27EC680011CB28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */,
+				99FE2D331ED08E0E005EE71A /* Result.framework */,
 				6B61E9971D2D920D00BD35A5 /* Alamofire.framework */,
 				99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */,
 				9940E85A1E2A5FA8000A51F2 /* IGListKit.framework */,
@@ -439,9 +445,10 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SOLIDNetworking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			outputPaths = (
 			);

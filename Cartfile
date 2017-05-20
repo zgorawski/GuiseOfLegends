@@ -1,4 +1,4 @@
-github "zgorawski/SOLIDNetworking" ~> 0.9
+github "zgorawski/SOLIDNetworking"
 github "Alamofire/AlamofireImage" ~> 3.1
 github "SwiftyJSON/SwiftyJSON"
-github "Instagram/IGListKit" ~> 2.0.0
+github "ReactiveCocoa/ReactiveSwift" ~> 1.1

@@ -21,7 +21,7 @@ struct GetVersionsRequest: SOLIDNetworking.Request {
     var host: String { return "eun1.api.riotgames.com" }
     var endpoint: String { return "/lol/static-data/v3/versions" }
     
-    var parameters: Parameters? { return nil }
+    var parameters: Parameters? { return ["api_key": apiKey] }
     var parameterEncoding: ParameterEncoding { return URLEncoding.default }
     var headers: HTTPHeaders? { return nil }
     
