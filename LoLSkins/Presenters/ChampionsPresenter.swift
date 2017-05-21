@@ -17,26 +17,27 @@ protocol ChampionsPresenterSubscriber: class {
 
 class ChampionsPresenter {
     
+    let latestVersion = MutableProperty<[ChampionsVM]?>(nil)
+    
     private weak var subscriber: ChampionsPresenterSubscriber!
     private let staticAPI: StaticDataAPI
-    private let signal:  Signal<([LoLChampion], LoLVersion), NoError>
+    private let producer:  SignalProducer<([LoLChampion], LoLVersion), NoError>
     
-    init(subscriber: ChampionsPresenterSubscriber, staticAPI: StaticDataAPI = StaticDataAPI()) {
+    init(subscriber: ChampionsPresenterSubscriber, staticAPI: StaticDataAPI = DIContainer.shared.staticDataAPI) {
         self.subscriber = subscriber
         self.staticAPI = staticAPI
         
-        signal = Signal.combineLatest(
-            staticAPI.champions.signal.skipNil(),
-            staticAPI.latestVersion.signal.skipNil())
+        producer = SignalProducer.combineLatest(
+            staticAPI.champions.producer.skipNil(),
+            staticAPI.latestVersion.producer.skipNil())
         
-        signal.observeValues { [unowned self] in
-            let vm = self.convertToVM(champions: $0.0, version: $0.1)
-            self.subscriber.present(champions: vm)
+        producer.startWithValues { [weak self] (champions, varsion) in
+            guard let vm = self?.convertToVM(champions: champions, version: varsion) else { return }
+            self?.latestVersion.value = vm
+            self?.subscriber.present(champions: vm)
         }
         
-        staticAPI.fetchChampions()
-        staticAPI.fetchLatestVersion()
-        
+        // TODO: Observe errors
     }
     
     // MARK: Private

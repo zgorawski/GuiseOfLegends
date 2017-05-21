@@ -35,6 +35,7 @@
 		99BA39B11EA4014100818C1D /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225001E27EC680011CB28 /* AlamofireImage.framework */; };
 		99BA39B41EA4014700818C1D /* SOLIDNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */; };
 		99BA39B51EA4014A00818C1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225041E27EC880011CB28 /* SwiftyJSON.framework */; };
+		99F835701ED17792000ACCC2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8356F1ED17792000ACCC2 /* DIContainer.swift */; };
 		99FE2D341ED08E0E005EE71A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D331ED08E0E005EE71A /* Result.framework */; };
 		99FE2D361ED08E15005EE71A /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		9995252A1EB264D2009500BE /* ChampionSkinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionSkinVC.swift; sourceTree = "<group>"; };
 		9995252C1EB26735009500BE /* SkinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCell.swift; sourceTree = "<group>"; };
 		99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOLIDNetworking.framework; path = Carthage/Build/iOS/SOLIDNetworking.framework; sourceTree = "<group>"; };
+		99F8356F1ED17792000ACCC2 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		99FE2D331ED08E0E005EE71A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				6BC76A451D325B9800E8BFF4 /* PListStorage.swift */,
+				99F8356F1ED17792000ACCC2 /* DIContainer.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				990441641EBF7AFE0077E296 /* APIError.swift in Sources */,
 				9904415C1EBF7A4C0077E296 /* StaticDataAPI.swift in Sources */,
 				990677A61EA546DC00FFFB68 /* Result.swift in Sources */,
+				99F835701ED17792000ACCC2 /* DIContainer.swift in Sources */,
 				6BE3AF851D299A7600076F50 /* AppDelegate.swift in Sources */,
 				9995252D1EB26735009500BE /* SkinCell.swift in Sources */,
 				990677A91EA549F400FFFB68 /* ChampionsPresenter.swift in Sources */,

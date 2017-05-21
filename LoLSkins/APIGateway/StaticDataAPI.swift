@@ -17,6 +17,10 @@ class StaticDataAPI {
     init(plistStorage: PListStorage = PListStorage(), engine: NetworkingEngine = NetworkingEngine()) {
         self.plistStorage = plistStorage
         self.engine = engine
+        
+        // warm up
+        fetchChampions()
+        fetchLatestVersion()
     }
 
     // MARK: Rx

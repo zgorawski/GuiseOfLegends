@@ -36,6 +36,7 @@ class ChampionsVC: UIViewController {
         // configure search controller
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
         
         searchController.searchBar.delegate = self
         searchController.searchBar.barStyle = .black
@@ -50,8 +51,9 @@ class ChampionsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        searchController.searchBar.sizeToFit()
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        //searchController.searchBar.sizeToFit()
+        
     }
     
     func filter(_ filter: String?) {
