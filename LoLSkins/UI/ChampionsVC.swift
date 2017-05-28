@@ -36,24 +36,31 @@ class ChampionsVC: UIViewController {
         // configure search controller
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = false
         
         searchController.searchBar.delegate = self
         searchController.searchBar.barStyle = .black
         searchController.searchBar.tintColor = UIColor.white
-        searchController.searchBar.isTranslucent = true
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.showsCancelButton = false
+         searchController.searchBar.keyboardAppearance = .dark
         
         searchPlaceholderView.addSubview(searchController.searchBar)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        //searchController.searchBar.sizeToFit()
+        navigationController?.setNavigationBarHidden(true, animated: animated)       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func filter(_ filter: String?) {
@@ -84,6 +91,10 @@ class ChampionsVC: UIViewController {
 }
 
 extension ChampionsVC: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.isActive = false
+    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         filter(nil)
