@@ -24,6 +24,8 @@ class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
         let champions = dataJson.flatMap({ (key: String, value: JSON) -> LoLChampion? in
             
             guard
+                let title = value["title"].string,
+                let id = value["id"].int,
                 let name = value["name"].string,
                 let championKey = value["key"].string,
                 let skinsJson = value["skins"].array
@@ -41,7 +43,7 @@ class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
                 
             })
             
-            return LoLChampion(name: name, key: championKey, skins: skins)
+            return LoLChampion(id: id, title: title, name: name, key: championKey, skins: skins)
             
         })
         
@@ -50,6 +52,8 @@ class GetChampionsInterpreter: SOLIDNetworking.Interpreter {
 }
 
 struct LoLChampion {
+    let id: Int
+    let title: String
     let name: String
     let key: String
     let skins: [Skin]

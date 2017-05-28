@@ -17,7 +17,7 @@ protocol ChampionsPresenterSubscriber: class {
 
 class ChampionsPresenter {
     
-    let latestVersion = MutableProperty<[ChampionsVM]?>(nil)
+    let championsVM = MutableProperty<[ChampionsVM]?>(nil)
     
     private weak var subscriber: ChampionsPresenterSubscriber!
     private let staticAPI: StaticDataAPI
@@ -33,7 +33,7 @@ class ChampionsPresenter {
         
         producer.startWithValues { [weak self] (champions, varsion) in
             guard let vm = self?.convertToVM(champions: champions, version: varsion) else { return }
-            self?.latestVersion.value = vm
+            self?.championsVM.value = vm
             self?.subscriber.present(champions: vm)
         }
         
@@ -46,7 +46,7 @@ class ChampionsPresenter {
         
         return champions.map { champion in
             let url = URL(string: "https://ddragon.leagueoflegends.com/cdn/\(version)/img/champion/\(champion.key).png")!
-            return ChampionsVM(key: champion.key, imageUrl: url)
+            return ChampionsVM(key: champion.key, imageUrl: url, model: champion)
         }
     }
     
@@ -59,6 +59,7 @@ struct ChampionsVM {
     
     let key: String
     let imageUrl: URL
+    let model: LoLChampion // TOOD: make it better
 }
 
 struct ErrorVM {

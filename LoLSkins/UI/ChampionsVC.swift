@@ -85,7 +85,8 @@ class ChampionsVC: UIViewController {
             segue.identifier == "showSkins",
             let vc = segue.destination as? ChampionSkinVC {
             
-            vc.championId = model.key
+            let presenter = SkinsPresenter(champion: model.model)
+            vc.viewModel = presenter.viewModel
         }
     }
 }

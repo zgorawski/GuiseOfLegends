@@ -29,6 +29,7 @@
 		998225091E27ED310011CB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998225081E27ED310011CB28 /* Assets.xcassets */; };
 		9982250B1E28143E0011CB28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9982250A1E28143E0011CB28 /* .gitignore */; };
 		9982250D1E2814670011CB28 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9982250C1E2814670011CB28 /* APIKey.plist */; };
+		999028B41EDB4621005F57A0 /* SkinsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999028B31EDB4621005F57A0 /* SkinsPresenter.swift */; };
 		9995252B1EB264D2009500BE /* ChampionSkinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995252A1EB264D2009500BE /* ChampionSkinVC.swift */; };
 		9995252D1EB26735009500BE /* SkinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995252C1EB26735009500BE /* SkinCell.swift */; };
 		99BA39B01EA4013F00818C1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61E9971D2D920D00BD35A5 /* Alamofire.framework */; };
@@ -90,6 +91,7 @@
 		998225081E27ED310011CB28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9982250A1E28143E0011CB28 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9982250C1E2814670011CB28 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		999028B31EDB4621005F57A0 /* SkinsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsPresenter.swift; sourceTree = "<group>"; };
 		9995252A1EB264D2009500BE /* ChampionSkinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionSkinVC.swift; sourceTree = "<group>"; };
 		9995252C1EB26735009500BE /* SkinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCell.swift; sourceTree = "<group>"; };
 		99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOLIDNetworking.framework; path = Carthage/Build/iOS/SOLIDNetworking.framework; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				990677A81EA549F400FFFB68 /* ChampionsPresenter.swift */,
+				999028B31EDB4621005F57A0 /* SkinsPresenter.swift */,
 			);
 			name = Presenters;
 			path = LoLSkins/Presenters;
@@ -472,6 +475,7 @@
 				990441621EBF7AEA0077E296 /* ChampionsInterpreter.swift in Sources */,
 				6BC76A461D325B9800E8BFF4 /* PListStorage.swift in Sources */,
 				9995252B1EB264D2009500BE /* ChampionSkinVC.swift in Sources */,
+				999028B41EDB4621005F57A0 /* SkinsPresenter.swift in Sources */,
 				990677A11EA5466F00FFFB68 /* ChampionsCell.swift in Sources */,
 				992A50C21EBF7B91006A83B0 /* VersionsRequest.swift in Sources */,
 				990677A41EA5466F00FFFB68 /* ChampionsVC.swift in Sources */,
