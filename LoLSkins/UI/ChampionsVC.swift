@@ -42,7 +42,7 @@ class ChampionsVC: UIViewController {
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.showsCancelButton = false
-         searchController.searchBar.keyboardAppearance = .dark
+        searchController.searchBar.keyboardAppearance = .dark
         
         searchPlaceholderView.addSubview(searchController.searchBar)
     }

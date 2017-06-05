@@ -20,12 +20,26 @@ class ChampionSkinVC : UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        navigationController?.hidesBarsOnTap = true
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         collectionView.contentInset = UIEdgeInsets.zero
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.backItem?.title = " "
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
@@ -56,8 +70,13 @@ extension ChampionSkinVC: UICollectionViewDataSource {
 extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+
         return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets.zero
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -69,5 +88,4 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
         
         return 0.0
     }
-    
 }

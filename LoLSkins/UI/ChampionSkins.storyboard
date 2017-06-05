@@ -12,7 +12,7 @@
         <!--Champion SkinVC-->
         <scene sceneID="etH-Rb-fHy">
             <objects>
-                <viewController id="8fS-BG-TPq" customClass="ChampionSkinVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8fS-BG-TPq" customClass="ChampionSkinVC" customModule="LoLSkins" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HRB-IB-SM0"/>
                         <viewControllerLayoutGuide type="bottom" id="qKR-PJ-KNl"/>
@@ -23,8 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xES-N6-F75">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DoY-OA-U1l">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DoY-OA-U1l">
                                     <size key="itemSize" width="151" height="153"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -33,12 +32,12 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SkinCellRI" id="2ir-qu-lad" customClass="SkinCell" customModule="LoLSkins" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="151" height="153"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FsY-NE-ZDM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FsY-NE-ZDM">
                                                     <rect key="frame" x="0.0" y="0.0" width="151" height="153"/>
                                                 </imageView>
                                             </subviews>
@@ -49,6 +48,7 @@
                                             <constraint firstItem="FsY-NE-ZDM" firstAttribute="top" secondItem="2ir-qu-lad" secondAttribute="top" id="YzI-hT-V9G"/>
                                             <constraint firstAttribute="bottom" secondItem="FsY-NE-ZDM" secondAttribute="bottom" id="xwg-2U-Hta"/>
                                         </constraints>
+                                        <size key="customSize" width="151" height="153"/>
                                         <connections>
                                             <outlet property="skinImage" destination="FsY-NE-ZDM" id="Mnh-Q2-BuY"/>
                                         </connections>
@@ -56,12 +56,11 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xES-N6-F75" firstAttribute="leading" secondItem="Btm-Dn-AVc" secondAttribute="leading" id="Gsj-ke-RS0"/>
-                            <constraint firstItem="qKR-PJ-KNl" firstAttribute="top" secondItem="xES-N6-F75" secondAttribute="bottom" id="KSJ-Gw-Q2w"/>
-                            <constraint firstAttribute="trailing" secondItem="xES-N6-F75" secondAttribute="trailing" id="lMB-nx-vX7"/>
-                            <constraint firstItem="xES-N6-F75" firstAttribute="top" secondItem="Btm-Dn-AVc" secondAttribute="top" id="vyJ-Ec-GAz"/>
+                            <constraint firstAttribute="trailing" secondItem="xES-N6-F75" secondAttribute="trailing" id="BkO-8u-s0Q"/>
+                            <constraint firstItem="xES-N6-F75" firstAttribute="top" secondItem="Btm-Dn-AVc" secondAttribute="top" id="h2e-8N-QxG"/>
+                            <constraint firstItem="xES-N6-F75" firstAttribute="bottom" secondItem="qKR-PJ-KNl" secondAttribute="top" id="wY3-Tv-SKA"/>
+                            <constraint firstItem="xES-N6-F75" firstAttribute="leading" secondItem="Btm-Dn-AVc" secondAttribute="leading" id="xST-w0-tjj"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

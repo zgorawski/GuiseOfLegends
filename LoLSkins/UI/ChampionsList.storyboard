@@ -13,9 +13,10 @@
         <scene sceneID="jlb-Ko-DP0">
             <objects>
                 <navigationController id="xRn-BL-tCM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="shF-BH-GrY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="shF-BH-GrY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="3fC-pR-sVX" kind="relationship" relationship="rootViewController" id="pvD-AU-xxY"/>
