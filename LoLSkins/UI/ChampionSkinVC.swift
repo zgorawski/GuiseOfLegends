@@ -11,6 +11,7 @@ import UIKit
 class ChampionSkinVC : UIViewController {
     
     var viewModel: [SkinVM]!
+    private var currentSkinName: String? = nil
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,9 +20,6 @@ class ChampionSkinVC : UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        navigationController?.hidesBarsOnTap = true
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -33,6 +31,7 @@ class ChampionSkinVC : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.hidesBarsOnTap = true
         navigationController?.navigationBar.backItem?.title = " "
     }
     
@@ -40,6 +39,18 @@ class ChampionSkinVC : UIViewController {
         super.viewDidAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.hidesBarsOnTap = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        currentSkinName = nil
     }
 }
 
@@ -79,13 +90,21 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets.zero
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return 0.0
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
     }
 }
