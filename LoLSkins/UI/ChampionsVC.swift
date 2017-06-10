@@ -51,7 +51,7 @@ class ChampionsVC: UIViewController {
         super.willTransition(to: newCollection, with: coordinator)
         
         coordinator.animate(alongsideTransition: { (context) in
-            self.searchController.searchBar.frame.size.width = self.searchPlaceholderView.frame.size.width
+            self.searchController.searchBar.sizeToFit()
         }, completion: nil)
     }
     
@@ -68,7 +68,7 @@ class ChampionsVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        searchController.searchBar.frame.size.width = searchPlaceholderView.frame.size.width
+        searchController.searchBar.sizeToFit()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
