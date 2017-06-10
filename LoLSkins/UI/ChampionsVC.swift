@@ -47,6 +47,14 @@ class ChampionsVC: UIViewController {
         searchPlaceholderView.addSubview(searchController.searchBar)
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            self.searchController.searchBar.frame.size.width = self.searchPlaceholderView.frame.size.width
+        }, completion: nil)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -55,6 +63,12 @@ class ChampionsVC: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        searchController.searchBar.frame.size.width = searchPlaceholderView.frame.size.width
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,7 +141,6 @@ extension ChampionsVC: UICollectionViewDataSource {
         if let championsCell = cell as? ChampionsCell {
             
             let championVM = filtered[indexPath.item]
-            championsCell.backgroundColor = UIColor(randomString: championVM.key)
             championsCell.portraitImageView.af_setImage(withURL: championVM.imageUrl)
         }
         
