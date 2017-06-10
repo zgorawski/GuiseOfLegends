@@ -11,21 +11,22 @@ import UIKit
 class ChampionSkinVC : UIViewController {
     
     var viewModel: [SkinVM]!
-    private var currentSkinName: String? = nil
+    fileprivate var currentSkinName: String? { didSet {
+        navigationController?.navigationBar.topItem?.title = currentSkinName
+        }
+    }
+    fileprivate var nextSkinName: String? = nil
+    fileprivate var vertSizeClass: UIUserInterfaceSizeClass!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        currentSkinName = "default"
+        vertSizeClass = self.traitCollection.verticalSizeClass
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        collectionView.contentInset = UIEdgeInsets.zero
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +34,7 @@ class ChampionSkinVC : UIViewController {
         
         navigationController?.hidesBarsOnTap = true
         navigationController?.navigationBar.backItem?.title = " "
+        currentSkinName = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +52,23 @@ class ChampionSkinVC : UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        currentSkinName = nil
+        nextSkinName = nil
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        vertSizeClass = newCollection.verticalSizeClass
+        
+        coordinator.animate(alongsideTransition: { [weak self] context in
+            self?.collectionView.performBatchUpdates(nil, completion: nil)
+            }, completion: { [weak self] context in
+                self?.collectionView.reloadData()
+        })
+        
+        //        coordinator.animate(alongsideTransition: nil) { [weak self] _ in
+        //            self?.collectionView.collectionViewLayout.invalidateLayout()
+        //            self?.collectionView.reloadData()
+        //        }
     }
 }
 
@@ -70,7 +88,9 @@ extension ChampionSkinVC: UICollectionViewDataSource {
         if let skinCell = cell as? SkinCell {
             
             let model = viewModel[indexPath.row]
-            skinCell.skinImage.af_setImage(withURL: model.portraitUrl)
+            let imgUrl = vertSizeClass == .compact ? model.splashUrl : model.portraitUrl
+            
+            skinCell.skinImage.af_setImage(withURL: imgUrl)
         }
         
         return cell
@@ -102,9 +122,17 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        if( currentSkinName == nil) {
+            currentSkinName = viewModel[indexPath.row].name
+        } else {
+            nextSkinName = viewModel[indexPath.row].name
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        if (viewModel[indexPath.row].name == currentSkinName) {
+            currentSkinName = nextSkinName
+        }
     }
 }
