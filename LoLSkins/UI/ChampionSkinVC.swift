@@ -22,9 +22,11 @@ class ChampionSkinVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("initial traitCollection: \(traitCollection)")
 
         currentSkinName = "default"
-        vertSizeClass = self.traitCollection.verticalSizeClass
+        vertSizeClass = traitCollection.verticalSizeClass
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -57,18 +59,16 @@ class ChampionSkinVC : UIViewController {
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
+        print("willTransition to traitCollection: \(newCollection)")
         vertSizeClass = newCollection.verticalSizeClass
         
-        coordinator.animate(alongsideTransition: { [weak self] context in
-            self?.collectionView.performBatchUpdates(nil, completion: nil)
-            }, completion: { [weak self] context in
-                self?.collectionView.reloadData()
-        })
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.layoutIfNeeded()
         
-        //        coordinator.animate(alongsideTransition: nil) { [weak self] _ in
-        //            self?.collectionView.collectionViewLayout.invalidateLayout()
-        //            self?.collectionView.reloadData()
-        //        }
+        coordinator.animate(alongsideTransition: nil) { (context) in
+            print("finished transition")
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -102,6 +102,14 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        print("size: \(collectionView.bounds.size)")
+        
+        if (vertSizeClass == .compact) {
+            return CGSize(
+                width: max(collectionView.bounds.size.height, collectionView.bounds.size.width),
+                height: min(collectionView.bounds.size.height, collectionView.bounds.size.width))
+        }
+        
         return collectionView.bounds.size
     }
     
