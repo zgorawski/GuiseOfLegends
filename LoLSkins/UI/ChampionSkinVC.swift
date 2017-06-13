@@ -24,6 +24,7 @@ class ChampionSkinVC : UIViewController {
     
     fileprivate var nextSkinIndexPath: IndexPath? = nil
     fileprivate var vertSizeClass: UIUserInterfaceSizeClass!
+    fileprivate var isTransition = false
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -64,17 +65,22 @@ class ChampionSkinVC : UIViewController {
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
+        isTransition = true
+        guard let ip = currentSkinIndexPath else { return }
+        print("scroll to: \(ip)")
+        
         vertSizeClass = newCollection.verticalSizeClass
         
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.layoutIfNeeded()
-        
-        coordinator.animate(alongsideTransition: nil) { (context) in
-            self.collectionView.reloadData()
-            guard let ip = self.currentSkinIndexPath else { return }
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.layoutIfNeeded()
 
-            self.collectionView.scrollToItem(at: ip, at: UICollectionViewScrollPosition.left, animated: false)
+        coordinator.animate(alongsideTransition: nil) { [weak self] (context) in
+            self?.collectionView.reloadData()
+            self?.collectionView.scrollToItem(at: ip, at: UICollectionViewScrollPosition.left, animated: false)
+            self?.isTransition = false
         }
+        
+        collectionView.scrollToItem(at: ip, at: UICollectionViewScrollPosition.left, animated: false)
     }
 }
 
@@ -134,6 +140,8 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        guard !isTransition else { return }
+        
         if( currentSkinIndexPath == nil) {
             currentSkinIndexPath = indexPath
         } else {
@@ -142,6 +150,8 @@ extension ChampionSkinVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        guard !isTransition else { return }
         
         if (indexPath == currentSkinIndexPath) {
             currentSkinIndexPath = nextSkinIndexPath
