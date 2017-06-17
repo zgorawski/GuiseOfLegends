@@ -19,6 +19,7 @@ class ChampionSkinVC : UIViewController {
                 return
             }
             navigationController?.navigationBar.topItem?.title = viewModel[ip.row].name
+            pageControl.currentPage = ip.row
         }
     }
     
@@ -27,6 +28,7 @@ class ChampionSkinVC : UIViewController {
     fileprivate var isTransition = false
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class ChampionSkinVC : UIViewController {
         vertSizeClass = traitCollection.verticalSizeClass
         collectionView.dataSource = self
         collectionView.delegate = self
+        pageControl.numberOfPages = viewModel.count
     }
     
     override func viewWillAppear(_ animated: Bool) {

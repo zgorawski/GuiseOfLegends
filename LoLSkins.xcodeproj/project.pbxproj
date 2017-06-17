@@ -37,6 +37,7 @@
 		99BA39B41EA4014700818C1D /* SOLIDNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */; };
 		99BA39B51EA4014A00818C1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998225041E27EC880011CB28 /* SwiftyJSON.framework */; };
 		99F835701ED17792000ACCC2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8356F1ED17792000ACCC2 /* DIContainer.swift */; };
+		99FA30851EF531F3009113E0 /* riot.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99FA30841EF531F3009113E0 /* riot.txt */; };
 		99FE2D341ED08E0E005EE71A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D331ED08E0E005EE71A /* Result.framework */; };
 		99FE2D361ED08E15005EE71A /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		9995252C1EB26735009500BE /* SkinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinCell.swift; sourceTree = "<group>"; };
 		99BA39B31EA4014700818C1D /* SOLIDNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOLIDNetworking.framework; path = Carthage/Build/iOS/SOLIDNetworking.framework; sourceTree = "<group>"; };
 		99F8356F1ED17792000ACCC2 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		99FA30841EF531F3009113E0 /* riot.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = riot.txt; sourceTree = "<group>"; };
 		99FE2D331ED08E0E005EE71A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		99FE2D351ED08E15005EE71A /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 		6BE3AF781D299A7500076F50 = {
 			isa = PBXGroup;
 			children = (
+				99FA30841EF531F3009113E0 /* riot.txt */,
 				9982250A1E28143E0011CB28 /* .gitignore */,
 				6B61E9951D2D858900BD35A5 /* Cartfile */,
 				6BE3AF831D299A7600076F50 /* LoLSkins */,
@@ -420,6 +423,7 @@
 				6BE3AF8F1D299A7600076F50 /* LaunchScreen.storyboard in Resources */,
 				6B61E9961D2D858900BD35A5 /* Cartfile in Resources */,
 				990677A31EA5466F00FFFB68 /* ChampionsList.storyboard in Resources */,
+				99FA30851EF531F3009113E0 /* riot.txt in Resources */,
 				9982250D1E2814670011CB28 /* APIKey.plist in Resources */,
 				9904F9FE1EAE75070076633B /* ChampionSkins.storyboard in Resources */,
 				998225091E27ED310011CB28 /* Assets.xcassets in Resources */,
@@ -636,7 +640,7 @@
 				INFOPLIST_FILE = LoLSkins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkins;
+				PRODUCT_BUNDLE_IDENTIFIER = ZGR.GuiseOfLegends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -656,7 +660,7 @@
 				INFOPLIST_FILE = LoLSkins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ZGR.LoLSkins;
+				PRODUCT_BUNDLE_IDENTIFIER = ZGR.GuiseOfLegends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
